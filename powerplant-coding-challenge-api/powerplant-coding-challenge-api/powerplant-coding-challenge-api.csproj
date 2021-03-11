@@ -5,9 +5,5 @@
     <RootNamespace>powerplant_coding_challenge_api</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 
 </Project>
