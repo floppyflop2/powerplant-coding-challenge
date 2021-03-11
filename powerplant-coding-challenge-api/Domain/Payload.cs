@@ -5,7 +5,7 @@ namespace Domain
 {
     public class Payload
     {
-        public Load EnergyAmount { get; set; }
+        public int Load { get; set; }
 
         public List<Fuel> Fuels { get; set; }
 
