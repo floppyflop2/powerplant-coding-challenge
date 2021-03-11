@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Domain.Enum;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +12,7 @@ namespace Domain
         public string Name { get; set; }
 
         [JsonProperty("type")]
-        public string Type { get; set; }
+        public PowerPlantType Type { get; set; }
 
         [JsonProperty("efficiency")]
         public double Efficency { get; set; }
