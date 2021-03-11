@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace powerplant_coding_challenge_api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/productionplan")]
     [ApiController]
     public class ProductionPlanController : ControllerBase
     {

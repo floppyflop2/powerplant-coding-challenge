@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "powerplant-coding-challenge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{34B733BE-4B12-4553-81B9-0486AB2E36B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{A263BD54-2B0C-439F-897C-BFAC9AC1E343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{34B733BE-4B12-4553-81B9-0486AB2E36B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34B733BE-4B12-4553-81B9-0486AB2E36B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34B733BE-4B12-4553-81B9-0486AB2E36B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A263BD54-2B0C-439F-897C-BFAC9AC1E343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A263BD54-2B0C-439F-897C-BFAC9AC1E343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A263BD54-2B0C-439F-897C-BFAC9AC1E343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A263BD54-2B0C-439F-897C-BFAC9AC1E343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
