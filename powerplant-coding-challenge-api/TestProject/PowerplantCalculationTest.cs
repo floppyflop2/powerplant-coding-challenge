@@ -19,31 +19,21 @@ namespace TestProject
         }
 
         [TestMethod]
-        public void PowerplantAreCorrectlyOrder()
+        public void PowerplantAreCorrectlyOrderedByType()
         {
             //
-            var input = new List<Powerplant>
-            {
-                new Powerplant{Type = PowerPlantType.TURBOJET},
-                new Powerplant{Type = PowerPlantType.WINDTURBINE},
-                new Powerplant{Type = PowerPlantType.GASFIRED},
-            };
+            var wind = new Powerplant { Type = PowerPlantType.WINDTURBINE, Name = "wind" };
+            var turbo = new Powerplant { Type = PowerPlantType.TURBOJET, Name = "turbo" };
+            var gas = new Powerplant { Type = PowerPlantType.GASFIRED, Name = "gas" };
+            var input = new List<Powerplant> { turbo, wind, gas };
+            var expected = new List<Powerplant> { wind, gas, turbo };
 
-            var expected = new List<Powerplant>
-            {
-                new Powerplant{Type = PowerPlantType.WINDTURBINE},
-                new Powerplant{Type = PowerPlantType.GASFIRED},
-                new Powerplant{Type = PowerPlantType.TURBOJET},
-            };
             //
-            var result = calculator.SortPowerPlant(input);
+            var result = calculator.SortPowerplantByType(input);
 
             //
             Assert.AreEqual(expected.Count, result.Count);
-            for (int i = 0; i < expected.Count; i++)
-            {
-                Assert.AreEqual(expected[i], result[i]);
-            }
+            CollectionAssert.AreEqual(result, expected);
         }
     }
 }

@@ -7,6 +7,6 @@ namespace BusinessLayer.interfaces
 {
     public interface IPowerCalculator
     {
-        List<Powerplant> SortPowerPlant(List<Powerplant> powerplants);
+        List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants);
     }
 }

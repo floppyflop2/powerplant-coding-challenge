@@ -14,8 +14,8 @@ namespace BusinessLayer
                 { PowerPlantType.TURBOJET, new List<Powerplant>() },
             };
 
-        //The priority order depending of the type is hardcoded I should find a better way 
-        public List<Powerplant> SortPowerPlant(List<Powerplant> powerplants)
+        
+        public List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants)
         {
             standardPowerplantOrderDictionnary[PowerPlantType.WINDTURBINE].AddRange(powerplants.Where(p => p.Type == PowerPlantType.WINDTURBINE).ToList());
             standardPowerplantOrderDictionnary[PowerPlantType.GASFIRED].AddRange(powerplants.Where(p => p.Type == PowerPlantType.GASFIRED).ToList());
