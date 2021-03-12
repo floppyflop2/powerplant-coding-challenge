@@ -20,7 +20,7 @@ namespace BusinessLayer
             _fuel = fuel;
         }
 
-        public ProductionPlan Perform(Powerplant powerplant)
+        public ProductionPlan Perform(Powerplant powerplant, int load)
         {
             throw new NotImplementedException();
         }

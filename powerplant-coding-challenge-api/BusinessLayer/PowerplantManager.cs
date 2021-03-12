@@ -9,17 +9,17 @@ namespace BusinessLayer
     public class PowerplantManager : IPowerplantManager
     {
         Dictionary<string, List<Powerplant>> standardPowerplantOrderDictionnary = new Dictionary<string, List<Powerplant>> {
-                { PowerPlantType.WINDTURBINE, new List<Powerplant>() },
-                { PowerPlantType.GASFIRED, new List<Powerplant>() },
-                { PowerPlantType.TURBOJET, new List<Powerplant>() },
+                { PowerplantType.WINDTURBINE, new List<Powerplant>() },
+                { PowerplantType.GASFIRED, new List<Powerplant>() },
+                { PowerplantType.TURBOJET, new List<Powerplant>() },
             };
 
 
         public List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants)
         {
-            standardPowerplantOrderDictionnary[PowerPlantType.WINDTURBINE].AddRange(powerplants.Where(p => p.Type == PowerPlantType.WINDTURBINE).ToList());
-            standardPowerplantOrderDictionnary[PowerPlantType.GASFIRED].AddRange(powerplants.Where(p => p.Type == PowerPlantType.GASFIRED).ToList());
-            standardPowerplantOrderDictionnary[PowerPlantType.TURBOJET].AddRange(powerplants.Where(p => p.Type == PowerPlantType.TURBOJET).ToList());
+            standardPowerplantOrderDictionnary[PowerplantType.WINDTURBINE].AddRange(powerplants.Where(p => p.Type == PowerplantType.WINDTURBINE).ToList());
+            standardPowerplantOrderDictionnary[PowerplantType.GASFIRED].AddRange(powerplants.Where(p => p.Type == PowerplantType.GASFIRED).ToList());
+            standardPowerplantOrderDictionnary[PowerplantType.TURBOJET].AddRange(powerplants.Where(p => p.Type == PowerplantType.TURBOJET).ToList());
 
             var orderedPowerplants = new List<Powerplant>();
             foreach (var p in standardPowerplantOrderDictionnary.Values)
@@ -44,9 +44,9 @@ namespace BusinessLayer
         {
             switch (powerplant.Type)
             {
-                case PowerPlantType.GASFIRED: return new GasPowerplant(powerplant, fuel);
-                case PowerPlantType.TURBOJET: return new TurboPowerplant(powerplant, fuel);
-                case PowerPlantType.WINDTURBINE: return new WindPowerplant(powerplant, fuel);
+                case PowerplantType.GASFIRED: return new GasPowerplant(powerplant, fuel);
+                case PowerplantType.TURBOJET: return new TurboPowerplant(powerplant, fuel);
+                case PowerplantType.WINDTURBINE: return new WindPowerplant(powerplant, fuel);
                 default: break;
             }
             return null;

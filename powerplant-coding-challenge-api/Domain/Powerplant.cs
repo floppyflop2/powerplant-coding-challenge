@@ -13,7 +13,7 @@ namespace Domain
         public string Type { get; set; }
 
         [JsonProperty(PropertyName = "efficiency")]
-        public double Efficency { get; set; }
+        public double Efficiency { get; set; }
 
         [JsonProperty(PropertyName = "pmin")]
         public int Pmin { get; set; }

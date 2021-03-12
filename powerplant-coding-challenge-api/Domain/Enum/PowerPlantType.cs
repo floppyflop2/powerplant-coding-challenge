@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Enum
 {
-    public class PowerPlantType
+    public class PowerplantType
     {
         public const string GASFIRED = "gasfired";
         public const string TURBOJET = "turbojet";

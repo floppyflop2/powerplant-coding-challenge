@@ -22,9 +22,9 @@ namespace TestProject
         public void PowerplantAreCorrectlyOrderedByType()
         {
             //
-            var wind = new Powerplant { Type = PowerPlantType.WINDTURBINE, Name = "wind" };
-            var turbo = new Powerplant { Type = PowerPlantType.TURBOJET, Name = "turbo" };
-            var gas = new Powerplant { Type = PowerPlantType.GASFIRED, Name = "gas" };
+            var wind = new Powerplant { Type = PowerplantType.WINDTURBINE, Name = "wind" };
+            var turbo = new Powerplant { Type = PowerplantType.TURBOJET, Name = "turbo" };
+            var gas = new Powerplant { Type = PowerplantType.GASFIRED, Name = "gas" };
             var input = new List<Powerplant> { turbo, wind, gas };
             var expected = new List<Powerplant> { wind, gas, turbo };
 
@@ -40,9 +40,9 @@ namespace TestProject
         public void PowerplantProcesserAreTheCorrectType()
         {
             //
-            var wind = new Powerplant { Type = PowerPlantType.WINDTURBINE, Name = "wind" };
-            var turbo = new Powerplant { Type = PowerPlantType.TURBOJET, Name = "turbo" };
-            var gas = new Powerplant { Type = PowerPlantType.GASFIRED, Name = "gas" };
+            var wind = new Powerplant { Type = PowerplantType.WINDTURBINE, Name = "wind" };
+            var turbo = new Powerplant { Type = PowerplantType.TURBOJET, Name = "turbo" };
+            var gas = new Powerplant { Type = PowerplantType.GASFIRED, Name = "gas" };
             var input = new List<Powerplant> { wind, gas, turbo };
             var fuel = new Fuel();
 
