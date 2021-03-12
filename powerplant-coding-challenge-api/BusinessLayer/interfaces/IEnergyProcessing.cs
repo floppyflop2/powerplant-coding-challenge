@@ -7,6 +7,6 @@ namespace BusinessLayer.interfaces
 {
     public interface IEnergyProcessing
     {
-        ProductionPlan Perform(Powerplant powerplant);
+        ProductionPlan Perform(Powerplant powerplant, int load);
     }
 }

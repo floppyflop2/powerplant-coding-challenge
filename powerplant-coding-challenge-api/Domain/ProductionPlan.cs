@@ -8,6 +8,6 @@ namespace Domain
         public string Name { get; set; }
 
         [JsonProperty(PropertyName = "p")]
-        public string Power { get; set; }
+        public int Power { get; set; }
     }
 }

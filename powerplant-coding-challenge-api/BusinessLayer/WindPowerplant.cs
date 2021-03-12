@@ -20,9 +20,20 @@ namespace BusinessLayer
             _fuel = fuel;
         }
 
-        public ProductionPlan Perform(Powerplant powerplant)
+        public ProductionPlan Perform(Powerplant powerplant, int load)
         {
-            var productionPlan = new ProductionPlan();
+            var power = powerplant.Pmax * Fuel.Wind;
+            power = Math.Round(power);
+            var remainingLoad = load - power;
+
+            if (remainingLoad < 0) return null;
+            load = (int)remainingLoad;
+
+            var productionPlan = new ProductionPlan
+            {
+                Name = powerplant.Name,
+                Power = Convert.ToInt32(power)
+            };
 
             return productionPlan;
         }
