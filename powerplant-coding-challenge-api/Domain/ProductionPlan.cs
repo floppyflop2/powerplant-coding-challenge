@@ -2,9 +2,9 @@
 
 namespace Domain
 {
-    public class PowerplantDelivery
+    public class ProductionPlan
     {
-        [JsonProperty(PropertyName ="name")]
+        [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         [JsonProperty(PropertyName = "p")]

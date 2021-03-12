@@ -16,8 +16,7 @@ namespace BusinessLayer
             _powerplant = powerplant;
         }
 
-
-        public void Perform(Powerplant powerplant)
+        public ProductionPlan Perform(Powerplant powerplant)
         {
             throw new NotImplementedException();
         }
