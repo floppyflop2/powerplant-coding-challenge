@@ -383,3 +383,7 @@ C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProj
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\powerplant-coding-challenge-api.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\powerplant-coding-challenge-api.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\BusinessLayer.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\Domain.pdb
