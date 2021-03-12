@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,9 @@ namespace powerplant_coding_challenge_api.Controllers
     {
         // GET: api/<ProductionPlanController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok("ok");
         }
 
         // GET api/<ProductionPlanController>/5
@@ -26,20 +28,14 @@ namespace powerplant_coding_challenge_api.Controllers
 
         // POST api/<ProductionPlanController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] object value)
         {
+            if (value == null) return BadRequest();
+            var powerPlant = JsonConvert.DeserializeObject<Payload>(value.ToString());
+            
+            
+            return Ok();
         }
 
-        // PUT api/<ProductionPlanController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ProductionPlanController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

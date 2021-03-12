@@ -1,0 +1,9 @@
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\bin\Debug\netstandard2.0\Domain.deps.json
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\bin\Debug\netstandard2.0\Domain.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\bin\Debug\netstandard2.0\Domain.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.cache
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\obj\Debug\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\obj\Debug\netstandard2.0\Domain.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\Domain\obj\Debug\netstandard2.0\Domain.pdb

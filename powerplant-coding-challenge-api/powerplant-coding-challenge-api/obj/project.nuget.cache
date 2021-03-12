@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wEB912o3irhD9g/b51UhOYF+CYUFBWdFI+oSIugd3ywtNe1RcHF5jEni6jJCZg3oHBgmc7x3upX+P9jhMF9Aug==",
+  "dgSpecHash": "HGkN5DF1Zmz0XQlxYXGvDqYV4TuhDJertwVpCYCNmrEST6ggjH+uXGaAQST0XTUkcguL6zMKcW0icp9iDsI11g==",
   "success": true,
   "projectFilePath": "C:\\Projects\\powerplant-coding-challenge\\powerplant-coding-challenge-api\\powerplant-coding-challenge-api\\powerplant-coding-challenge-api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Florian\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

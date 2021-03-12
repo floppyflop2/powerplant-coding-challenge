@@ -1,26 +1,24 @@
 ﻿using Domain.Enum;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain
 {
+    [JsonObject]
     public class Powerplant
     {
-        [JsonProperty("name")]
+        [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
-        [JsonProperty("type")]
-        public PowerPlantType Type { get; set; }
+        [JsonProperty(PropertyName = "type")]
+        public string Type { get; set; }
 
-        [JsonProperty("efficiency")]
+        [JsonProperty(PropertyName = "efficiency")]
         public double Efficency { get; set; }
 
-        [JsonProperty("pmin")]
+        [JsonProperty(PropertyName = "pmin")]
         public int Pmin { get; set; }
 
-        [JsonProperty("pmax")]
+        [JsonProperty(PropertyName = "pmax")]
         public int Pmax { get; set; }
     }
 }

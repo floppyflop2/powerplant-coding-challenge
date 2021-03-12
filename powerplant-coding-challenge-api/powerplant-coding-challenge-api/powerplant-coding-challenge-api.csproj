@@ -5,5 +5,9 @@
     <RootNamespace>powerplant_coding_challenge_api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>

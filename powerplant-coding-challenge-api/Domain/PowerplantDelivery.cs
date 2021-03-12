@@ -1,16 +1,13 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain
 {
     public class PowerplantDelivery
     {
-        [JsonProperty("name")]
+        [JsonProperty(PropertyName ="name")]
         public string Name { get; set; }
 
-        [JsonProperty("p")]
+        [JsonProperty(PropertyName = "p")]
         public string Power { get; set; }
     }
 }

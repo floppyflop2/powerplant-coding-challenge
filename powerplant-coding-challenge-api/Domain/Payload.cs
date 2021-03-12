@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace Domain
 {
+    [JsonObject]
     public class Payload
     {
+        [JsonProperty(PropertyName = "load")]
         public int Load { get; set; }
 
-        public List<Fuel> Fuels { get; set; }
+        [JsonProperty(PropertyName = "fuels")]
+        public Fuel Fuels { get; set; }
 
-        public List<Powerplant> Powerplant { get; set; }
+        [JsonProperty(PropertyName = "powerplants")]
+        public Powerplant[] Powerplant { get; set; }
 
     }
 }
