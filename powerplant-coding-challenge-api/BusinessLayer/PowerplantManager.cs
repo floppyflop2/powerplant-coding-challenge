@@ -14,7 +14,7 @@ namespace BusinessLayer
                 { PowerPlantType.TURBOJET, new List<Powerplant>() },
             };
 
-        
+
         public List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants)
         {
             standardPowerplantOrderDictionnary[PowerPlantType.WINDTURBINE].AddRange(powerplants.Where(p => p.Type == PowerPlantType.WINDTURBINE).ToList());
@@ -26,6 +26,30 @@ namespace BusinessLayer
                 orderedPowerplants.AddRange(p);
 
             return orderedPowerplants;
+        }
+
+        public List<IEnergyProcessing> GetPowerplantProcesser(List<Powerplant> powerplants)
+        {
+            var powerplantsProcessers = new List<IEnergyProcessing>();
+
+            foreach (var powerplant in powerplants)
+            {
+                var processer = GetProcessing(powerplant);
+                if (processer != null) powerplantsProcessers.Add(processer);
+            }
+            return powerplantsProcessers;
+        }
+
+        private IEnergyProcessing GetProcessing(Powerplant powerplant)
+        {
+            switch (powerplant.Type)
+            {
+                case PowerPlantType.GASFIRED: return new GasPowerplant(powerplant);
+                case PowerPlantType.TURBOJET: return new TurboPowerplant(powerplant);
+                case PowerPlantType.WINDTURBINE: return new WindPowerplant(powerplant);
+                default: break;
+            }
+            return null;
         }
     }
 }

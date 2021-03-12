@@ -387,3 +387,7 @@ C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProj
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\Domain.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\NLog.config
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\TestProject\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
