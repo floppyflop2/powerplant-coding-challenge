@@ -11,6 +11,7 @@ namespace BusinessLayer
         public List<Powerplant> SortPowerPlant(List<Powerplant> powerplants)
         {
             Dictionary<string, Powerplant> powerplantDictionnary = new Dictionary<string, Powerplant>();
+            return new List<Powerplant>();
         }
     }
 }
