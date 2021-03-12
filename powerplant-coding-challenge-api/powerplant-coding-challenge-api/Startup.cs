@@ -37,6 +37,7 @@ namespace powerplant_coding_challenge_api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.ConfigureCustomExceptionMiddleware();
             app.ConfigureExceptionHandler(logger);
             app.UseHttpsRedirection();
             app.UseRouting();

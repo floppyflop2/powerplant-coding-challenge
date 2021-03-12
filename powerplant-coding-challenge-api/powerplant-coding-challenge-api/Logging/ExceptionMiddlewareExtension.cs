@@ -11,6 +11,11 @@ namespace powerplant_coding_challenge_api.Logging
 {
     public static class ExceptionMiddlewareExtension
     {
+        public static void ConfigureCustomExceptionMiddleware(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
+        }
+
         public static void ConfigureExceptionHandler(this IApplicationBuilder app, ILog logger)
         {
             app.UseExceptionHandler(appError =>

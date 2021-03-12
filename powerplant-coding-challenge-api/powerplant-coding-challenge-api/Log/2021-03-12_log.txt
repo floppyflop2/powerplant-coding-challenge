@@ -1,0 +1,10 @@
+2021-03-12 15:26:34.5567 DEBUG Application Starting Up
+2021-03-12 15:26:35.4150 FATAL Application startup exception
+2021-03-12 15:26:35.4633 ERROR Stopped program because of exception
+2021-03-12 15:32:29.3284 DEBUG Application Starting Up
+2021-03-12 15:32:30.0801 FATAL Application startup exception
+2021-03-12 15:32:30.1214 ERROR Stopped program because of exception
+2021-03-12 15:34:14.2845 DEBUG Application Starting Up
+2021-03-12 15:34:15.1882 INFO Application started. Press Ctrl+C to shut down.
+2021-03-12 15:34:15.1882 INFO Hosting environment: Development
+2021-03-12 15:34:15.1882 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api

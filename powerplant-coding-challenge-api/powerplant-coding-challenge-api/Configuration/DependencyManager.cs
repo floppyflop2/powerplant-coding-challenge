@@ -15,6 +15,7 @@ namespace powerplant_coding_challenge_api.Configuration
         {
             ConfigureBusinessSevices(services);
             ConfigureControllers(services);
+            ConfigureSingleton(services);
         }
 
         public static void ConfigureBusinessSevices(this IServiceCollection services)
