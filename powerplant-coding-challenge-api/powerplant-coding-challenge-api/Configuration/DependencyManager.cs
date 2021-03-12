@@ -12,7 +12,7 @@ namespace powerplant_coding_challenge_api.Configuration
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            ConfigureServices(services);
+            ConfigureBusinessSevices(services);
             ConfigureControllers(services);
         }
 
