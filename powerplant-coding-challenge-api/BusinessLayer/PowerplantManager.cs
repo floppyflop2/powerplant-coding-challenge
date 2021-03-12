@@ -28,25 +28,25 @@ namespace BusinessLayer
             return orderedPowerplants;
         }
 
-        public List<IEnergyProcessing> GetPowerplantProcesser(List<Powerplant> powerplants)
+        public List<IEnergyProcessing> InitializePowerplantProcesser(List<Powerplant> powerplants, Fuel fuel)
         {
             var powerplantsProcessers = new List<IEnergyProcessing>();
 
             foreach (var powerplant in powerplants)
             {
-                var processer = GetProcessing(powerplant);
+                var processer = GetProcessing(powerplant, fuel);
                 if (processer != null) powerplantsProcessers.Add(processer);
             }
             return powerplantsProcessers;
         }
 
-        private IEnergyProcessing GetProcessing(Powerplant powerplant)
+        private IEnergyProcessing GetProcessing(Powerplant powerplant, Fuel fuel)
         {
             switch (powerplant.Type)
             {
-                case PowerPlantType.GASFIRED: return new GasPowerplant(powerplant);
-                case PowerPlantType.TURBOJET: return new TurboPowerplant(powerplant);
-                case PowerPlantType.WINDTURBINE: return new WindPowerplant(powerplant);
+                case PowerPlantType.GASFIRED: return new GasPowerplant(powerplant, fuel);
+                case PowerPlantType.TURBOJET: return new TurboPowerplant(powerplant, fuel);
+                case PowerPlantType.WINDTURBINE: return new WindPowerplant(powerplant, fuel);
                 default: break;
             }
             return null;

@@ -8,5 +8,6 @@ namespace BusinessLayer.interfaces
     public interface IPowerplantManager
     {
         List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants);
+        List<IEnergyProcessing> InitializePowerplantProcesser(List<Powerplant> powerplants, Fuel fuel);
     }
 }

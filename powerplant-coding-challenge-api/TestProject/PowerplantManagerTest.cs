@@ -44,9 +44,10 @@ namespace TestProject
             var turbo = new Powerplant { Type = PowerPlantType.TURBOJET, Name = "turbo" };
             var gas = new Powerplant { Type = PowerPlantType.GASFIRED, Name = "gas" };
             var input = new List<Powerplant> { wind, gas, turbo };
+            var fuel = new Fuel();
 
             //
-            var result = calculator.GetPowerplantProcesser(input);
+            var result = calculator.InitializePowerplantProcesser(input,fuel);
 
             //
             Assert.AreEqual(input.Count, result.Count);
