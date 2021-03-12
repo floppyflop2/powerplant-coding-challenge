@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BusinessLayer
 {
-    public class PowerCalculator : IPowerCalculator
+    public class PowerplantManager : IPowerplantManager
     {
         Dictionary<string, List<Powerplant>> standardPowerplantOrderDictionnary = new Dictionary<string, List<Powerplant>> {
                 { PowerPlantType.WINDTURBINE, new List<Powerplant>() },

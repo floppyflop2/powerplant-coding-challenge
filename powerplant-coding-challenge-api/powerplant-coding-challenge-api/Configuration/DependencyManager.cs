@@ -18,7 +18,7 @@ namespace powerplant_coding_challenge_api.Configuration
 
         public static void ConfigureBusinessSevices(this IServiceCollection services)
         {
-            services.AddScoped<IPowerCalculator, PowerCalculator>();
+            services.AddScoped<IPowerplantManager, PowerplantManager>();
         }
 
         public static void ConfigureControllers(this IServiceCollection services)

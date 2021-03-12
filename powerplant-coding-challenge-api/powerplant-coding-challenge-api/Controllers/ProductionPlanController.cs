@@ -14,9 +14,9 @@ namespace powerplant_coding_challenge_api.Controllers
     public class ProductionPlanController : ControllerBase
     {
 
-        private IPowerCalculator _powerCalculator;
+        private IPowerplantManager _powerCalculator;
 
-        public ProductionPlanController(IPowerCalculator powerCalculator)
+        public ProductionPlanController(IPowerplantManager powerCalculator)
         {
             _powerCalculator = powerCalculator;
         }

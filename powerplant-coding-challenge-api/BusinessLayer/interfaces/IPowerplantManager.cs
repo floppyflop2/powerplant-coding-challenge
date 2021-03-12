@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BusinessLayer.interfaces
 {
-    public interface IPowerCalculator
+    public interface IPowerplantManager
     {
         List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants);
     }

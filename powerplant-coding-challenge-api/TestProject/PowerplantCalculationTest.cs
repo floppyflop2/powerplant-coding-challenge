@@ -10,12 +10,12 @@ namespace TestProject
     public class PowerplantCalculationTest
     {
 
-        PowerCalculator calculator;
+        PowerplantManager calculator;
 
         [TestInitialize]
         public void Initialize()
         {
-            calculator = new PowerCalculator();
+            calculator = new PowerplantManager();
         }
 
         [TestMethod]
