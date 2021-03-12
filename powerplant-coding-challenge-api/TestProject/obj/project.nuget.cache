@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "W8D4d7lRTCI2Z1NuIw+lMZ6/IEUj7KxeQKEWIznzGW/R09WvEbl8HHxi9HFdO7dJpS1L/w9eZCfZRwRQr0Wr0g==",
+  "dgSpecHash": "LevMaqbwwzpnkCbdjnAX7claauyiI/7PO850mVjCwwzDiLsvdJCPI00O4dQnkY93QMY9m53PNq5SuRafmCCcIQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\powerplant-coding-challenge\\powerplant-coding-challenge-api\\TestProject\\TestProject.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,9 @@
     "C:\\Users\\Florian\\.nuget\\packages\\mstest.testframework\\2.1.1\\mstest.testframework.2.1.1.nupkg.sha512",
     "C:\\Users\\Florian\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Florian\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Florian\\.nuget\\packages\\nlog\\4.7.8\\nlog.4.7.8.nupkg.sha512",
+    "C:\\Users\\Florian\\.nuget\\packages\\nlog.extensions.logging\\1.7.1\\nlog.extensions.logging.1.7.1.nupkg.sha512",
+    "C:\\Users\\Florian\\.nuget\\packages\\nlog.web.aspnetcore\\4.11.0\\nlog.web.aspnetcore.4.11.0.nupkg.sha512",
     "C:\\Users\\Florian\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
