@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestProject
 {
     [TestClass]
-    public class UnitTest1
+    public class PowerplantCalculationTest
     {
         [TestInitialize]
         public void Initialize() { }

@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using BusinessLayer.interfaces;
+using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -12,6 +13,14 @@ namespace powerplant_coding_challenge_api.Controllers
     [ApiController]
     public class ProductionPlanController : ControllerBase
     {
+
+        private IPowerCalculator _powerCalculator;
+
+        public ProductionPlanController(IPowerCalculator powerCalculator)
+        {
+            _powerCalculator = powerCalculator;
+        }
+
         // GET: api/<ProductionPlanController>
         [HttpGet]
         public IActionResult Get()
@@ -32,8 +41,7 @@ namespace powerplant_coding_challenge_api.Controllers
         {
             if (value == null) return BadRequest();
             var powerPlant = JsonConvert.DeserializeObject<Payload>(value.ToString());
-            
-            
+
             return Ok();
         }
 

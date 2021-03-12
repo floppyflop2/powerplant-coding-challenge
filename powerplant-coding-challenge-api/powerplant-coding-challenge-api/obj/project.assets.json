@@ -11,6 +11,19 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "BusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -58,6 +71,11 @@
         "packageIcon.png"
       ]
     },
+    "BusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLayer/BusinessLayer.csproj",
+      "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -66,6 +84,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BusinessLayer >= 1.0.0",
       "Domain >= 1.0.0"
     ]
   },
@@ -101,6 +120,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Projects\\powerplant-coding-challenge\\powerplant-coding-challenge-api\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Projects\\powerplant-coding-challenge\\powerplant-coding-challenge-api\\BusinessLayer\\BusinessLayer.csproj"
+            },
             "C:\\Projects\\powerplant-coding-challenge\\powerplant-coding-challenge-api\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Projects\\powerplant-coding-challenge\\powerplant-coding-challenge-api\\Domain\\Domain.csproj"
             }
