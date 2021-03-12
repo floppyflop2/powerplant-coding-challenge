@@ -22,7 +22,7 @@ namespace BusinessLayer
 
         public ProductionPlan Perform(Powerplant powerplant, int load)
         {
-            var power = powerplant.Pmax * Fuel.Wind;
+            var power = (powerplant.Pmax * Fuel.Wind)/100;
             power = Math.Round(power);
             var remainingLoad = load - power;
 
