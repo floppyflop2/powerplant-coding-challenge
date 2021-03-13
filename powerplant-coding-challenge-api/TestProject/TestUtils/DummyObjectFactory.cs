@@ -56,7 +56,7 @@ namespace TestProject.TestUtils
             };
         }
 
-        public static WindProducer GetDummyWindPowerplantProcessor()
+        public static WindProducer GetDummyWindProducer()
         {
             var wind = GetDummyWindPowerplant();
             var fuel = GetDummyFuel();
