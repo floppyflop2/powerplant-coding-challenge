@@ -14,7 +14,6 @@ namespace BusinessLayer
                 { PowerplantType.TURBOJET, new List<Powerplant>() },
             };
 
-
         public List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants)
         {
             standardPowerplantOrderDictionnary[PowerplantType.WINDTURBINE].AddRange(powerplants.Where(p => p.Type == PowerplantType.WINDTURBINE).ToList());

@@ -10,7 +10,7 @@ namespace BusinessLayer
     {
         Powerplant _powerplant;
         Fuel _fuel;
-   
+
         public Fuel Fuel { get => _fuel; set => _fuel = value; }
         public Powerplant Powerplant { get => _powerplant; set => _powerplant = value; }
 
@@ -20,9 +20,9 @@ namespace BusinessLayer
             Fuel = fuel;
         }
 
-        public ProductionPlan Perform(Powerplant powerplant,ref int load)
+        public ProductionPlan Perform(ref int load)
         {
-            var power = (powerplant.Pmax * Fuel.KerosineEuroMWh) / 100;
+            var power = (Powerplant.Pmax * Fuel.KerosineEuroMWh) / 100;
             power = Math.Round(power);
             var remainingLoad = load - power;
 
@@ -31,7 +31,7 @@ namespace BusinessLayer
 
             var productionPlan = new ProductionPlan
             {
-                Name = powerplant.Name,
+                Name = Powerplant.Name,
                 Power = Convert.ToInt32(power)
             };
 
@@ -40,7 +40,33 @@ namespace BusinessLayer
 
         public ProductionPlan ReduceLoad(ref int load)
         {
-            throw new NotImplementedException();
+            ProductionPlan productionPlan = new ProductionPlan
+            {
+                Name = Powerplant.Name
+            };
+
+            //if (load == 0) productionPlan.Power = 0;
+            if (load < _powerplant.Pmax)
+            {
+                productionPlan.Power = load;
+                load = 0;
+            }
+            else
+            {
+                productionPlan.Power = Powerplant.Pmax;
+                load = load - Powerplant.Pmax;
+            }
+
+            return productionPlan;
+        }
+
+        public double CalculateProductionCost(int load)
+        {
+            var TMW = (2 * Powerplant.Efficiency);
+            var power = Math.Round(TMW, 2);
+            double price = power * Fuel.KerosineEuroMWh;
+
+            return Math.Round(price, 2);
         }
     }
 }
