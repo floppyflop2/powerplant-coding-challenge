@@ -1,6 +1,6 @@
 using BusinessLayer;
 using Domain;
-using Domain.Enum;
+using Domain.Const;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 

@@ -20,8 +20,10 @@ namespace BusinessLayer
             _fuel = fuel;
         }
 
-        public ProductionPlan Perform(ref int load)
+        public ProductionPlan Perform(ref int load, out double price)
         {
+            price = CalculateProductionCost(load);
+
             var power = (Powerplant.Pmax * Fuel.Wind) / 100;
             power = Math.Round(power);
             var remainingLoad = load - power;
@@ -45,16 +47,19 @@ namespace BusinessLayer
                 Name = Powerplant.Name
             };
 
-            //if (load == 0) productionPlan.Power = 0;
-            if (load < _powerplant.Pmax)
+            //if there is only 60% of wind
+            var pMaxEfficiency = Powerplant.Pmax * (Fuel.Wind / 100);
+
+            if (load < pMaxEfficiency)
             {
                 productionPlan.Power = load;
                 load = 0;
             }
             else
             {
-                productionPlan.Power = Powerplant.Pmax;
-                load = load - Powerplant.Pmax;
+                var roundPmax = (int)Math.Round(pMaxEfficiency);
+                productionPlan.Power = roundPmax ;
+                load = load - roundPmax;
             }
 
             return productionPlan;

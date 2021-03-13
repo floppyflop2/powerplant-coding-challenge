@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.interfaces;
 using Domain;
+using Domain.Const;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,22 +21,11 @@ namespace BusinessLayer
             _fuel = fuel;
         }
 
-        public ProductionPlan Perform(ref int load)
+        public ProductionPlan Perform(ref int load, out double price)
         {
-            //2TMW for 0.5 
-            var power = (2 * Powerplant.Efficiency) * Fuel.GasEuroMWh / 100;
-            power = Math.Round(power);
-            var remainingLoad = load - power;
-
-            if (remainingLoad < 0) return null;
-            load = (int)remainingLoad;
-
-            var productionPlan = new ProductionPlan
-            {
-                Name = Powerplant.Name,
-                Power = Convert.ToInt32(power)
-            };
-
+            //2Gas for 1 electricity
+            price = CalculateProductionCost(load);
+            var productionPlan = ReduceLoad(ref load);
             return productionPlan;
         }
 
@@ -63,9 +53,13 @@ namespace BusinessLayer
 
         public double CalculateProductionCost(int load)
         {
-            var TMW = (2 * Powerplant.Efficiency) * Fuel.GasEuroMWh / 100;
-            var power = Math.Round(TMW, 2);
-            double price = power * Fuel.GasEuroMWh;
+            double price;
+            var powerForOneUnit = (Constants.GAS_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency) / 2;
+            var priceForOneUnit = powerForOneUnit * Fuel.GasEuroMWh;
+
+            if (load < Powerplant.Pmax)
+                price = priceForOneUnit * load;
+            else price = Powerplant.Pmax * priceForOneUnit;
 
             return Math.Round(price, 2);
         }

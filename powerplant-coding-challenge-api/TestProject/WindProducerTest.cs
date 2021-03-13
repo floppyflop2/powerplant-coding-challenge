@@ -12,12 +12,14 @@ namespace TestProject
     public class WindProducerTest
     {
         private WindProducer windProducer;
+        private Fuel fuel;
+        private Powerplant powerplant;
 
         [TestInitialize]
         public void Initialize()
         {
-            var powerplant = DummyObjectFactory.GetDummyWindPowerplant();
-            var fuel = DummyObjectFactory.GetDummyFuel();
+            powerplant = DummyObjectFactory.GetDummyWindPowerplant();
+            fuel = DummyObjectFactory.GetDummyFuel();
             windProducer = new WindProducer(powerplant, fuel);
         }
 
@@ -61,15 +63,17 @@ namespace TestProject
             powerplant.Pmax = 10;
             windProducer.Powerplant = powerplant;
             var load = 15;
-
+            var expectedPower = powerplant.Pmax * (fuel.Wind / 100);
+            var expectedLoad = 15- expectedPower;
+         
             //
             var result = windProducer.ReduceLoad(ref load);
 
             //
-            Assert.IsTrue(result.Power == 10);
-            Assert.IsTrue(load == 5);
+            Assert.IsTrue(result.Power == expectedPower);
+            Assert.IsTrue(load == expectedLoad);
         }
-       
+
         [TestMethod]
         public void ReturnProductionPlanWithPowerWhenLoadIs0()
         {

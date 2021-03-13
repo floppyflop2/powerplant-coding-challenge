@@ -20,8 +20,9 @@ namespace BusinessLayer
             Fuel = fuel;
         }
 
-        public ProductionPlan Perform(ref int load)
+        public ProductionPlan Perform(ref int load, out double price)
         {
+            price = CalculateProductionCost(load);
             var power = (Powerplant.Pmax * Fuel.KerosineEuroMWh) / 100;
             power = Math.Round(power);
             var remainingLoad = load - power;

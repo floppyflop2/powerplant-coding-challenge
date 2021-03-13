@@ -23,8 +23,10 @@ namespace BusinessLayer
         public List<ProductionPlan> PerformCalculation(List<IEnergyProducer> processors, int load)
         {
             var productionPlans = new List<ProductionPlan>();
-
-            foreach(var processor in processors)
+         
+            if (load == 0) return productionPlans;
+          
+            foreach (var processor in processors)
             {
                 productionPlans.Add(processor.ReduceLoad(ref load));
             }

@@ -1,7 +1,7 @@
 ﻿using BusinessLayer;
 using BusinessLayer.interfaces;
 using Domain;
-using Domain.Enum;
+using Domain.Const;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -23,14 +23,13 @@ namespace TestProject
             IEnergyProducer processors = new WindProducer(wind, fuel);
 
             calculationProcessor = new ProductionPlanManager();
-            energyProcessors = new List<IEnergyProducer> ();
+            energyProcessors = new List<IEnergyProducer>();
         }
 
         [TestMethod]
-        public void ReturnNullWhenLoadIs0()
+        public void ReturnEmptyListWhenLoadIs0()
         {
             //
-            var powerplant = DummyObjectFactory.GetDummyWindPowerplant();
             var load = 0;
 
             //
@@ -38,7 +37,8 @@ namespace TestProject
             var result = calculationProcessor.PerformCalculation(energyProcessors, load);
 
             //
-            Assert.IsNull(result);
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Count == 0);
             Assert.IsTrue(load == 0);
         }
 
