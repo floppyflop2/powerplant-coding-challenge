@@ -36,8 +36,11 @@ namespace BusinessLayer
                 Name = Powerplant.Name
             };
 
-            //if (load == 0) productionPlan.Power = 0;
-            if (load < _powerplant.Pmax)
+            if (load == 0)
+            {
+                productionPlan.Power = 0;
+            }
+            else if (load < _powerplant.Pmax)
             {
                 productionPlan.Power = load;
                 load = 0;
@@ -54,6 +57,7 @@ namespace BusinessLayer
         public double CalculateProductionCost(int load)
         {
             double price;
+            if (load == 0) return 0;
             var powerForOneUnit = (Constants.GAS_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency) / Constants.GAS_UNITS_FOR_ONE_ELECTRICITY;
             var priceForOneUnit = powerForOneUnit * Fuel.GasEuroMWh;
 
