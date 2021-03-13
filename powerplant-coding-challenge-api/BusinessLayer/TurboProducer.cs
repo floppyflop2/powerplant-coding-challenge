@@ -6,23 +6,23 @@ using System.Text;
 
 namespace BusinessLayer
 {
-    public class WindPowerplant : IEnergyProcessing
+    public class TurboProducer : IEnergyProducer
     {
         Powerplant _powerplant;
         Fuel _fuel;
-
+   
         public Fuel Fuel { get => _fuel; set => _fuel = value; }
         public Powerplant Powerplant { get => _powerplant; set => _powerplant = value; }
 
-        public WindPowerplant(Powerplant powerplant, Fuel fuel)
+        public TurboProducer(Powerplant powerplant, Fuel fuel)
         {
             _powerplant = powerplant;
-            _fuel = fuel;
+            Fuel = fuel;
         }
 
-        public ProductionPlan Perform(Powerplant powerplant, int load)
+        public ProductionPlan Perform(Powerplant powerplant,ref int load)
         {
-            var power = (powerplant.Pmax * Fuel.Wind)/100;
+            var power = (powerplant.Pmax * Fuel.KerosineEuroMWh) / 100;
             power = Math.Round(power);
             var remainingLoad = load - power;
 
@@ -36,6 +36,11 @@ namespace BusinessLayer
             };
 
             return productionPlan;
+        }
+
+        public ProductionPlan ReduceLoad(ref int load)
+        {
+            throw new NotImplementedException();
         }
     }
 }

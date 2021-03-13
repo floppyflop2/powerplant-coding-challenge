@@ -1,5 +1,7 @@
 ﻿using BusinessLayer;
+using BusinessLayer.interfaces;
 using Domain;
+using Domain.Enum;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -9,16 +11,19 @@ using TestProject.TestUtils;
 namespace TestProject
 {
     [TestClass]
-    public class WindPowerplantTest
+    public class CalculationProcessorTest
     {
-        private WindProducer windPowerplant;
-
+        private ProductionPlanManager calculationProcessor;
+        private List<IEnergyProducer> energyProcessors;
         [TestInitialize]
         public void Initialize()
         {
-            var powerplant = DummyObjectFactory.GetDummyWindPowerplant();
+            var wind = DummyObjectFactory.GetDummyWindPowerplant();
             var fuel = DummyObjectFactory.GetDummyFuel();
-            windPowerplant = new WindProducer(powerplant, fuel);
+            IEnergyProducer processors = new WindProducer(wind, fuel);
+
+            calculationProcessor = new ProductionPlanManager();
+            energyProcessors = new List<IEnergyProducer> ();
         }
 
         [TestMethod]
@@ -29,11 +34,13 @@ namespace TestProject
             var load = 0;
 
             //
-            var result = windPowerplant.Perform(powerplant, ref load);
+
+            var result = calculationProcessor.PerformCalculation(energyProcessors, load);
 
             //
             Assert.IsNull(result);
             Assert.IsTrue(load == 0);
         }
+
     }
 }

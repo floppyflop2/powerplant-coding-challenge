@@ -51,9 +51,9 @@ namespace TestProject
 
             //
             Assert.AreEqual(input.Count, result.Count);
-            Assert.IsInstanceOfType(result[0], typeof(WindPowerplant));
-            Assert.IsInstanceOfType(result[1], typeof(GasPowerplant));
-            Assert.IsInstanceOfType(result[2], typeof(TurboPowerplant));
+            Assert.IsInstanceOfType(result[0], typeof(WindProducer));
+            Assert.IsInstanceOfType(result[1], typeof(GasProducer));
+            Assert.IsInstanceOfType(result[2], typeof(TurboProducer));
         }
     }
 }

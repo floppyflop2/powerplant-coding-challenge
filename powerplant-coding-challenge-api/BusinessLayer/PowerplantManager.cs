@@ -28,9 +28,9 @@ namespace BusinessLayer
             return orderedPowerplants;
         }
 
-        public List<IEnergyProcessing> InitializePowerplantProcesser(List<Powerplant> powerplants, Fuel fuel)
+        public List<IEnergyProducer> InitializePowerplantProcesser(List<Powerplant> powerplants, Fuel fuel)
         {
-            var powerplantsProcessers = new List<IEnergyProcessing>();
+            var powerplantsProcessers = new List<IEnergyProducer>();
 
             foreach (var powerplant in powerplants)
             {
@@ -40,16 +40,17 @@ namespace BusinessLayer
             return powerplantsProcessers;
         }
 
-        private IEnergyProcessing GetProcessing(Powerplant powerplant, Fuel fuel)
+        private IEnergyProducer GetProcessing(Powerplant powerplant, Fuel fuel)
         {
             switch (powerplant.Type)
             {
-                case PowerplantType.GASFIRED: return new GasPowerplant(powerplant, fuel);
-                case PowerplantType.TURBOJET: return new TurboPowerplant(powerplant, fuel);
-                case PowerplantType.WINDTURBINE: return new WindPowerplant(powerplant, fuel);
+                case PowerplantType.GASFIRED: return new GasProducer(powerplant, fuel);
+                case PowerplantType.TURBOJET: return new TurboProducer(powerplant, fuel);
+                case PowerplantType.WINDTURBINE: return new WindProducer(powerplant, fuel);
                 default: break;
             }
             return null;
         }
+
     }
 }

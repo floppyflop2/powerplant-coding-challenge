@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using BusinessLayer;
+using Domain;
 using Domain.Enum;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,13 @@ namespace TestProject.TestUtils
                 Pmin = 0,
                 Pmax = 16
             };
+        }
+
+        public static WindProducer GetDummyWindPowerplantProcessor()
+        {
+            var wind = GetDummyWindPowerplant();
+            var fuel = GetDummyFuel();
+            return new WindProducer(wind, fuel);
         }
     }
 }
