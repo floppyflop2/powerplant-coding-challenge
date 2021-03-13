@@ -21,6 +21,7 @@ namespace powerplant_coding_challenge_api.Configuration
         public static void ConfigureBusinessSevices(this IServiceCollection services)
         {
             services.AddScoped<IPowerplantManager, PowerplantManager>();
+            services.AddScoped<IProductionPlanManager, ProductionPlanManager>();
         }
 
         public static void ConfigureControllers(this IServiceCollection services)

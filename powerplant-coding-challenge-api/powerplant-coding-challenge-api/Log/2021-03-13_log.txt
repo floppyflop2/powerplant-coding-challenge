@@ -1,0 +1,4 @@
+2021-03-13 19:59:38.4945 DEBUG Application Starting Up
+2021-03-13 19:59:39.9325 INFO Application started. Press Ctrl+C to shut down.
+2021-03-13 19:59:39.9325 INFO Hosting environment: Development
+2021-03-13 19:59:39.9325 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api

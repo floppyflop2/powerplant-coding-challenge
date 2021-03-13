@@ -751,3 +751,249 @@ File name: 'NLog.Extended, Culture=neutral, PublicKeyToken=null'
 2021-03-12 15:34:23.1884 Debug Warn => logfile
 2021-03-12 15:34:23.1884 Debug Error => logfile
 2021-03-12 15:34:23.1884 Debug Fatal => logfile
+2021-03-13 19:59:38.2480 Info Message Template Auto Format enabled
+2021-03-13 19:59:38.2652 Info Loading assembly: NLog.Extended
+2021-03-13 19:59:38.2767 Trace Try find 'NLog.Extended' in current domain
+2021-03-13 19:59:38.2767 Trace Haven't found' 'NLog.Extended' in current domain
+2021-03-13 19:59:38.2767 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error loading extensions: NLog.Extended
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'NLog.Extended, Culture=neutral, PublicKeyToken=null'. Le fichier spécifié est introuvable.
+File name: 'NLog.Extended, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, RuntimeAssembly assemblyContext, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at NLog.Internal.AssemblyHelpers.LoadFromName(String assemblyName)
+   at NLog.Config.LoggingConfigurationParser.ParseExtensionWithAssembly(String assemblyName, String prefix)
+
+
+   --- End of inner exception stack trace ---
+2021-03-13 19:59:38.3637 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3637 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-13 19:59:38.3637 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-13 19:59:38.3637 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-13 19:59:38.3637 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3637 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.3637 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3637 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-13 19:59:38.3790 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-13 19:59:38.3790 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-13 19:59:38.3790 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.3790 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.3790 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3790 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-03-13 19:59:38.3790 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3790 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-13 19:59:38.3790 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-03-13 19:59:38.3790 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt'
+2021-03-13 19:59:38.3790 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3790 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-13 19:59:38.3790 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-03-13 19:59:38.3929 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3929 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-13 19:59:38.3929 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-03-13 19:59:38.3929 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-03-13 19:59:38.3929 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3929 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.3929 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3929 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-13 19:59:38.3929 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-13 19:59:38.3929 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-13 19:59:38.3929 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.3929 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.3929 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.3929 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-13 19:59:38.3929 Info Adding target FileTarget(Name=logfile)
+2021-03-13 19:59:38.3929 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-03-13 19:59:38.3929 Trace ParseRulesElement
+2021-03-13 19:59:38.4305 Debug Watching path 'C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1' filter 'NLog.config' for changes.
+2021-03-13 19:59:38.4305 Debug --- NLog configuration dump ---
+2021-03-13 19:59:38.4305 Debug Targets:
+2021-03-13 19:59:38.4305 Debug File Target[logfile]
+2021-03-13 19:59:38.4305 Debug Rules:
+2021-03-13 19:59:38.4305 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-03-13 19:59:38.4305 Debug --- End of NLog configuration dump ---
+2021-03-13 19:59:38.4305 Trace FindReachableObject<System.Object>:
+2021-03-13 19:59:38.4399 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-03-13 19:59:38.4399 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-03-13 19:59:38.4399 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-03-13 19:59:38.4399 Trace   Scanning Property FileName ''C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt'' NLog.Layouts
+2021-03-13 19:59:38.4399 Trace   Scanning SimpleLayout ''C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt''
+2021-03-13 19:59:38.4399 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4399 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4399 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-13 19:59:38.4399 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4399 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-13 19:59:38.4399 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-13 19:59:38.4399 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4399 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-13 19:59:38.4399 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4399 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-13 19:59:38.4399 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-13 19:59:38.4399 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-13 19:59:38.4399 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4399 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.4399 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4399 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-13 19:59:38.4399 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-13 19:59:38.4399 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-03-13 19:59:38.4399 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-03-13 19:59:38.4399 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.config
+2021-03-13 19:59:38.4399 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-03-13 19:59:38.4594 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-03-13 19:59:38.4594 Trace Initializing Layout Renderer: ${message}
+2021-03-13 19:59:38.4594 Trace Initializing Layout Renderer: ${literal}
+2021-03-13 19:59:38.4594 Trace Initializing Layout Renderer: ${level}
+2021-03-13 19:59:38.4594 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-03-13 19:59:38.4594 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.4594 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-13 19:59:38.4594 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4594 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.4594 Trace Initializing Layout Renderer: ${uppercase}
+2021-03-13 19:59:38.4594 Trace Initializing Layout Renderer: ${literal}
+2021-03-13 19:59:38.4594 Trace Initializing Layout Renderer: ${longdate}
+2021-03-13 19:59:38.4594 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-03-13 19:59:38.4718 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.4718 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-13 19:59:38.4718 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4718 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-03-13 19:59:38.4718 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4718 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-03-13 19:59:38.4718 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-03-13 19:59:38.4718 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-03-13 19:59:38.4718 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4718 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-03-13 19:59:38.4718 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4718 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-03-13 19:59:38.4718 Trace Initializing Layout Renderer: ${literal}
+2021-03-13 19:59:38.4718 Trace Initializing Layout Renderer: ${shortdate}
+2021-03-13 19:59:38.4718 Trace Initializing Layout Renderer: ${literal}
+2021-03-13 19:59:38.4718 Trace Initializing 'C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt'
+2021-03-13 19:59:38.4718 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-03-13 19:59:38.4718 Trace Scanning SimpleLayout ''C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt''
+2021-03-13 19:59:38.4718 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-03-13 19:59:38.4718 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4718 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-03-13 19:59:38.4718 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-03-13 19:59:38.4718 Trace Initializing File Target[logfile]
+2021-03-13 19:59:38.4718 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-03-13 19:59:38.4718 Trace Scanning FileTarget 'File Target[logfile]'
+2021-03-13 19:59:38.4718 Trace  Scanning Property FileName ''C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt'' NLog.Layouts
+2021-03-13 19:59:38.4718 Trace  Scanning SimpleLayout ''C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/${shortdate}_log.txt''
+2021-03-13 19:59:38.4718 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-03-13 19:59:38.4718 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-03-13 19:59:38.4718 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-03-13 19:59:38.4718 Trace File Target[logfile] has 2 layouts
+2021-03-13 19:59:38.4718 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-03-13 19:59:38.4945 Debug Targets for powerplant_coding_challenge_api.Program by level:
+2021-03-13 19:59:38.4945 Debug Trace =>
+2021-03-13 19:59:38.4945 Debug Debug => logfile
+2021-03-13 19:59:38.4945 Debug Info => logfile
+2021-03-13 19:59:38.4945 Debug Warn => logfile
+2021-03-13 19:59:38.4945 Debug Error => logfile
+2021-03-13 19:59:38.4945 Debug Fatal => logfile
+2021-03-13 19:59:38.5177 Debug FileTarget(Name=logfile): Preparing for new file 'C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/2021-03-13_log.txt'
+2021-03-13 19:59:38.5250 Debug Creating file appender: C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/2021-03-13_log.txt
+2021-03-13 19:59:38.5250 Trace Opening C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/2021-03-13_log.txt with allowFileSharedWriting=False
+2021-03-13 19:59:39.6307 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-13 19:59:39.6721 Debug Hide assemblies for callsite
+2021-03-13 19:59:39.6721 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-03-13 19:59:39.6857 Debug Targets for Microsoft.Extensions.Hosting.Internal.ApplicationLifetime by level:
+2021-03-13 19:59:39.6857 Debug Trace =>
+2021-03-13 19:59:39.6857 Debug Debug => logfile
+2021-03-13 19:59:39.6857 Debug Info => logfile
+2021-03-13 19:59:39.6857 Debug Warn => logfile
+2021-03-13 19:59:39.6857 Debug Error => logfile
+2021-03-13 19:59:39.6857 Debug Fatal => logfile
+2021-03-13 19:59:39.6927 Debug Targets for Microsoft.Extensions.Hosting.Internal.Host by level:
+2021-03-13 19:59:39.6927 Debug Trace =>
+2021-03-13 19:59:39.6927 Debug Debug => logfile
+2021-03-13 19:59:39.6927 Debug Info => logfile
+2021-03-13 19:59:39.6927 Debug Warn => logfile
+2021-03-13 19:59:39.6927 Debug Error => logfile
+2021-03-13 19:59:39.6927 Debug Fatal => logfile
+2021-03-13 19:59:39.6927 Debug Targets for Microsoft.Hosting.Lifetime by level:
+2021-03-13 19:59:39.6927 Debug Trace =>
+2021-03-13 19:59:39.6927 Debug Debug => logfile
+2021-03-13 19:59:39.6927 Debug Info => logfile
+2021-03-13 19:59:39.6927 Debug Warn => logfile
+2021-03-13 19:59:39.6927 Debug Error => logfile
+2021-03-13 19:59:39.6927 Debug Fatal => logfile
+2021-03-13 19:59:39.6927 Debug Targets for Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer by level:
+2021-03-13 19:59:39.6927 Debug Trace =>
+2021-03-13 19:59:39.6927 Debug Debug => logfile
+2021-03-13 19:59:39.6927 Debug Info => logfile
+2021-03-13 19:59:39.6927 Debug Warn => logfile
+2021-03-13 19:59:39.6927 Debug Error => logfile
+2021-03-13 19:59:39.6927 Debug Fatal => logfile
+2021-03-13 19:59:39.7075 Debug Targets for Microsoft.AspNetCore.Hosting.Diagnostics by level:
+2021-03-13 19:59:39.7075 Debug Trace =>
+2021-03-13 19:59:39.7075 Debug Debug => logfile
+2021-03-13 19:59:39.7075 Debug Info => logfile
+2021-03-13 19:59:39.7075 Debug Warn => logfile
+2021-03-13 19:59:39.7075 Debug Error => logfile
+2021-03-13 19:59:39.7075 Debug Fatal => logfile
+2021-03-13 19:59:39.7563 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2021-03-13 19:59:39.7563 Debug Trace =>
+2021-03-13 19:59:39.7563 Debug Debug => logfile
+2021-03-13 19:59:39.7563 Debug Info => logfile
+2021-03-13 19:59:39.7563 Debug Warn => logfile
+2021-03-13 19:59:39.7563 Debug Error => logfile
+2021-03-13 19:59:39.7563 Debug Fatal => logfile
+2021-03-13 19:59:39.7563 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter by level:
+2021-03-13 19:59:39.7563 Debug Trace =>
+2021-03-13 19:59:39.7563 Debug Debug => logfile
+2021-03-13 19:59:39.7563 Debug Info => logfile
+2021-03-13 19:59:39.7563 Debug Warn => logfile
+2021-03-13 19:59:39.7563 Debug Error => logfile
+2021-03-13 19:59:39.7563 Debug Fatal => logfile
+2021-03-13 19:59:39.8740 Debug Targets for Microsoft.AspNetCore.Routing.EndpointMiddleware by level:
+2021-03-13 19:59:39.8740 Debug Trace =>
+2021-03-13 19:59:39.8740 Debug Debug => logfile
+2021-03-13 19:59:39.8740 Debug Info => logfile
+2021-03-13 19:59:39.8740 Debug Warn => logfile
+2021-03-13 19:59:39.8740 Debug Error => logfile
+2021-03-13 19:59:39.8740 Debug Fatal => logfile
+2021-03-13 19:59:39.8740 Debug Targets for Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware by level:
+2021-03-13 19:59:39.8740 Debug Trace =>
+2021-03-13 19:59:39.8771 Debug Debug => logfile
+2021-03-13 19:59:39.8771 Debug Info => logfile
+2021-03-13 19:59:39.8771 Debug Warn => logfile
+2021-03-13 19:59:39.8771 Debug Error => logfile
+2021-03-13 19:59:39.8771 Debug Fatal => logfile
+2021-03-13 19:59:39.8771 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2021-03-13 19:59:39.8771 Debug Trace =>
+2021-03-13 19:59:39.8771 Debug Debug => logfile
+2021-03-13 19:59:39.8771 Debug Info => logfile
+2021-03-13 19:59:39.8771 Debug Warn => logfile
+2021-03-13 19:59:39.8771 Debug Error => logfile
+2021-03-13 19:59:39.8771 Debug Fatal => logfile
+2021-03-13 19:59:39.8771 Debug Targets for Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware by level:
+2021-03-13 19:59:39.8771 Debug Trace =>
+2021-03-13 19:59:39.8771 Debug Debug => logfile
+2021-03-13 19:59:39.8771 Debug Info => logfile
+2021-03-13 19:59:39.8771 Debug Warn => logfile
+2021-03-13 19:59:39.8771 Debug Error => logfile
+2021-03-13 19:59:39.8771 Debug Fatal => logfile
+2021-03-13 19:59:39.9019 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2021-03-13 19:59:39.9019 Debug Trace =>
+2021-03-13 19:59:39.9019 Debug Debug => logfile
+2021-03-13 19:59:39.9019 Debug Info => logfile
+2021-03-13 19:59:39.9019 Debug Warn => logfile
+2021-03-13 19:59:39.9019 Debug Error => logfile
+2021-03-13 19:59:39.9019 Debug Fatal => logfile
+2021-03-13 19:59:39.9019 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2021-03-13 19:59:39.9019 Debug Trace =>
+2021-03-13 19:59:39.9019 Debug Debug => logfile
+2021-03-13 19:59:39.9019 Debug Info => logfile
+2021-03-13 19:59:39.9019 Debug Warn => logfile
+2021-03-13 19:59:39.9019 Debug Error => logfile
+2021-03-13 19:59:39.9019 Debug Fatal => logfile
+2021-03-13 19:59:39.9325 Trace Opening C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/2021-03-13_log.txt with allowFileSharedWriting=False
+2021-03-13 19:59:39.9325 Trace Opening C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/2021-03-13_log.txt with allowFileSharedWriting=False
+2021-03-13 19:59:39.9325 Trace Opening C:/Projects/powerplant-coding-challenge/powerplant-coding-challenge-api/powerplant-coding-challenge-api/Log/2021-03-13_log.txt with allowFileSharedWriting=False
+2021-03-13 19:59:40.0122 Debug Targets for Microsoft.AspNetCore.Routing.Matching.DfaMatcher by level:
+2021-03-13 19:59:40.0122 Debug Trace =>
+2021-03-13 19:59:40.0122 Debug Debug => logfile
+2021-03-13 19:59:40.0122 Debug Info => logfile
+2021-03-13 19:59:40.0122 Debug Warn => logfile
+2021-03-13 19:59:40.0122 Debug Error => logfile
+2021-03-13 19:59:40.0122 Debug Fatal => logfile
