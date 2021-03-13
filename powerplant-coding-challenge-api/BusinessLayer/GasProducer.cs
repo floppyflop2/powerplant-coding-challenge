@@ -36,11 +36,7 @@ namespace BusinessLayer
                 Name = Powerplant.Name
             };
 
-            if (load == 0)
-            {
-                productionPlan.Power = 0;
-            }
-            else if (load < _powerplant.Pmax)
+            if (load < _powerplant.Pmax)
             {
                 productionPlan.Power = load;
                 load = 0;
