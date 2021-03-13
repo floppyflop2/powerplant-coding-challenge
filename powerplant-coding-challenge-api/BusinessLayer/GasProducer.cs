@@ -54,7 +54,7 @@ namespace BusinessLayer
         public double CalculateProductionCost(int load)
         {
             double price;
-            var powerForOneUnit = (Constants.GAS_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency) / 2;
+            var powerForOneUnit = (Constants.GAS_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency) / Constants.GAS_UNITS_FOR_ONE_ELECTRICITY;
             var priceForOneUnit = powerForOneUnit * Fuel.GasEuroMWh;
 
             if (load < Powerplant.Pmax)

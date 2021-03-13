@@ -23,20 +23,7 @@ namespace BusinessLayer
         public ProductionPlan Perform(ref int load, out double price)
         {
             price = CalculateProductionCost(load);
-
-            var power = (Powerplant.Pmax * Fuel.Wind) / 100;
-            power = Math.Round(power);
-            var remainingLoad = load - power;
-
-            if (remainingLoad < 0) return null;
-            load = (int)remainingLoad;
-
-            var productionPlan = new ProductionPlan
-            {
-                Name = Powerplant.Name,
-                Power = Convert.ToInt32(power)
-            };
-
+            var productionPlan = ReduceLoad(ref load);
             return productionPlan;
         }
 
@@ -58,7 +45,7 @@ namespace BusinessLayer
             else
             {
                 var roundPmax = (int)Math.Round(pMaxEfficiency);
-                productionPlan.Power = roundPmax ;
+                productionPlan.Power = roundPmax;
                 load = load - roundPmax;
             }
 
