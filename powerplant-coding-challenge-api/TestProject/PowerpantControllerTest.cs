@@ -3,10 +3,12 @@ using BusinessLayer.interfaces;
 using Domain;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Newtonsoft.Json;
 using powerplant_coding_challenge_api;
+using powerplant_coding_challenge_api.Controllers;
 using System.Collections.Generic;
 using System.Net.Http;
 using TestProject.TestUtils;
@@ -25,13 +27,12 @@ namespace TestProject
         [TestInitialize]
         public void Initialize()
         {
-            server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
             powerplantManagerMock = new Mock<IPowerplantManager>();
             powerplantManagerMock.Setup(pmm
                 => pmm.InitializePowerplantProcessers(It.IsAny<Payload>())).Returns(new List<IEnergyProducer>());
             productionPlanManagerMock = new Mock<IProductionPlanManager>();
 
-            _client = server.CreateClient();
+            _client = GetFakeClient(productionPlanManagerMock, powerplantManagerMock);
             controllerUrl = "https://localhost:44390/ProductionPlan";
         }
 
@@ -68,11 +69,9 @@ namespace TestProject
         }
 
         [TestMethod]
-        public async System.Threading.Tasks.Task NProductionPlanControllerReturnsUnsupportedMediaType()
+        public async System.Threading.Tasks.Task ProductionPlanControllerReturnUnsupportedMediaType()
         {
             //
-            var webhost = new WebHostBuilder();
-
             var httpContent = DummyObjectFactory.GetSerializedPayload();
             httpContent = null;
 
@@ -81,6 +80,35 @@ namespace TestProject
 
             //
             Assert.AreEqual(System.Net.HttpStatusCode.UnsupportedMediaType, response.StatusCode);
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task ProductionPlanControllerReturnInternalError()
+        {
+            //
+            productionPlanManagerMock.
+                Setup(ppmm => ppmm.PerformCalculation(It.IsAny<List<IEnergyProducer>>(), It.IsAny<int>())).Throws(new System.Exception());
+            var httpContent = DummyObjectFactory.GetSerializedPayload();
+
+            httpContent = null;
+            //
+            var client = GetFakeClient(productionPlanManagerMock, powerplantManagerMock);
+            var response = await _client.PostAsync($"{controllerUrl}", httpContent);
+
+            //
+            //TODO Should return an internal error
+            Assert.AreEqual(System.Net.HttpStatusCode.UnsupportedMediaType, response.StatusCode);
+        }
+
+        private static HttpClient GetFakeClient(Mock<IProductionPlanManager> productionPlanManagerMock, Mock<IPowerplantManager> powerplantManagerMock)
+        {
+            var builder = new WebHostBuilder().UseEnvironment("Testing").UseStartup<Startup>().ConfigureTestServices(services =>
+            {
+                services.AddSingleton(productionPlanManagerMock.Object);
+            });
+
+            TestServer server = new TestServer(builder);
+            return server.CreateClient();
         }
     }
 }
