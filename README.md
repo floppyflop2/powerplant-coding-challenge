@@ -8,8 +8,10 @@ and type the command "dotnet test"
 
 # Build
 
-To run the application go in the directoy powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api 
-and execute the command "dotnet build" then "dotnet run"
+To run the application:
+  - go in the directoy powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api and execute the command 
+  - "dotnet build"  
+  - "dotnet run"
 
 not that there is many config files in the NLog.config you can set: 
   - internalLogFile with the path for the internal logs
