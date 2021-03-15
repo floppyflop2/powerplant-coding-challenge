@@ -8,5 +8,6 @@ namespace BusinessLayer.interfaces
     public interface IProductionPlanManager
     {
         List<ProductionPlan> PerformCalculation(List<IEnergyProducer> processors, int load);
+        List<ProductionPlan> PerformCalculationPricing(List<IEnergyProducer> processors, int load);
     }
 }
