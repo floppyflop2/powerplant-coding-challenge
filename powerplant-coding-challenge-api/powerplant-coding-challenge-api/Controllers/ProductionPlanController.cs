@@ -39,17 +39,21 @@ namespace powerplant_coding_challenge_api.Controllers
 
         // POST api/<ProductionPlanController>
         [HttpPost]
-        public ActionResult<ProductionPlan[]> Post([FromBody] object value)
+        public ActionResult<ProductionPlan[]> ProcessPayload([FromBody] object value)
         {
             if (value == null) return BadRequest();
-            var payload = JsonConvert.DeserializeObject<Payload>(value.ToString());
-
-            var powerplantProducers = _powerplantManager.InitializePowerplantProcessers(payload);
-            var productionPlans = _productionPlanManager.PerformCalculation(powerplantProducers, payload.Load);
-
-
-            return Ok();
+            try
+            {
+                var payload = JsonConvert.DeserializeObject<Payload>(value.ToString());
+                var powerplantProducers = _powerplantManager.InitializePowerplantProcessers(payload);
+                var productionPlans = _productionPlanManager.PerformCalculation(powerplantProducers, payload.Load);
+               
+                return Ok(productionPlans);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
         }
-
     }
 }
