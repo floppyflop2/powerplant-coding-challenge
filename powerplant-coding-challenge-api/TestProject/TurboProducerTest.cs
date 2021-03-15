@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using Domain;
+using Domain.Const;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -90,5 +91,86 @@ namespace TestProject
             Assert.IsTrue(load == 0);
         }
 
+        [TestMethod]
+        public void ReturnCorrectAmountBasedOnFuelCost()
+        {
+            //
+            var powerplant = DummyObjectFactory.GetDummyTurboPowerplant();
+            var fuel = DummyObjectFactory.GetDummyFuel();
+            int load = 1;
+            powerplant.Efficiency = 0.3;
+            powerplant.Pmax = 10;
+            fuel.KerosineEuroMWh = 5;
+            turboProducer.Powerplant = powerplant;
+            turboProducer.Fuel = fuel;
+            var expectedPrice = Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY * fuel.KerosineEuroMWh;
+
+            //
+            var result = turboProducer.CalculateProductionCost(load);
+
+            //
+            //round result cause issues so I round it 
+            Assert.IsTrue(Math.Round(result) == Math.Round(expectedPrice));
+            Assert.IsTrue(load == 1);
+        }
+
+        [TestMethod]
+        public void ReturnCost0WhenLoadIs0()
+        {
+            //
+            var powerplant = DummyObjectFactory.GetDummyTurboPowerplant();
+            powerplant.Pmax = 10;
+            turboProducer.Powerplant = powerplant;
+            int load = 0;
+
+            //
+            var result = turboProducer.CalculateProductionCost(load);
+
+            //
+            Assert.IsTrue(result == 0);
+            Assert.IsTrue(load == 0);
+        }
+
+        [TestMethod]
+        public void ReturnCorrectAmountBasedOnCo2Cost()
+        {
+            //
+            var powerplant = DummyObjectFactory.GetDummyTurboPowerplant();
+            var fuel = DummyObjectFactory.GetDummyFuel();
+            int load = 1;
+            powerplant.Efficiency = 0.3;
+            powerplant.Pmax = 10;
+            fuel.Co2EuroTon = 1;
+            fuel.KerosineEuroMWh = 5;
+            turboProducer.Powerplant = powerplant;
+            turboProducer.Fuel = fuel;
+            
+            var expectedPrice = Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY * fuel.KerosineEuroMWh + 0.3;
+
+            //
+            var result = turboProducer.calculateCo2ProductionCost(load);
+
+            //
+            //round result cause issues so I round it 
+            Assert.IsTrue(Math.Round(result,1) == Math.Round(expectedPrice, 1));
+            Assert.IsTrue(load == 1);
+        }
+
+        [TestMethod]
+        public void ReturnCo2Cost0WhenLoadIs0()
+        {
+            //
+            var powerplant = DummyObjectFactory.GetDummyTurboPowerplant();
+            powerplant.Pmax = 10;
+            turboProducer.Powerplant = powerplant;
+            int load = 0;
+
+            //
+            var result = turboProducer.calculateCo2ProductionCost(load);
+
+            //
+            Assert.IsTrue(result == 0);
+            Assert.IsTrue(load == 0);
+        }
     }
 }

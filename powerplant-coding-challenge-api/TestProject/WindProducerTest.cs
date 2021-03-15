@@ -39,7 +39,7 @@ namespace TestProject
 
 
         [TestMethod]
-        public void ReturnProductionPlanWithCorrectPowerWhenLoadIs0()
+        public void ReturnProductionPlanWithCorrectPower()
         {
             //
             var powerplant = DummyObjectFactory.GetDummyWindPowerplant();

@@ -37,7 +37,7 @@ namespace TestProject
 
             productionPlanManagerMock = new Mock<IProductionPlanManager>();
             _client = GetClient();
-            controllerUrl = "https://localhost:44390/ProductionPlan";
+            controllerUrl = "https://localhost:8888/productionplan";
             fuelPriceUrl = "fuelPrice";
             productionPrice = "productionPrice";
             co2emission = "co2emission";
@@ -47,10 +47,10 @@ namespace TestProject
         public async System.Threading.Tasks.Task GetExpectedHardcodedAnswerAsync()
         {
             //
-            var expected = "value";
+            var expected = "ok";
 
             //
-            var response = await _client.GetAsync($"{controllerUrl}/1");
+            var response = await _client.GetAsync($"{controllerUrl}");
             var content = response.Content.ReadAsStringAsync().Result;
             var result = content.ToString();
 

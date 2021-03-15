@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>powerplant_coding_challenge_api</RootNamespace>
+    <StartupObject>powerplant_coding_challenge_api.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

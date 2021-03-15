@@ -54,7 +54,7 @@ namespace BusinessLayer
             var costDictionary = new Dictionary<IEnergyProducer, double>();
 
             foreach (var processor in processors)
-            {
+            { 
                 var price = processor.calculateCo2ProductionCost(load);
                 processor.ReduceLoad(ref load);
                 costDictionary.Add(processor, price);

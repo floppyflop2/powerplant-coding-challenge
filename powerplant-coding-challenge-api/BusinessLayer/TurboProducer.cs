@@ -55,7 +55,7 @@ namespace BusinessLayer
             double price;
             if (load == 0) return 0;
 
-            var powerForOneUnit = (Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency) / Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY;
+            var powerForOneUnit = Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency;
             var priceForOneUnit = powerForOneUnit * Fuel.KerosineEuroMWh;
 
             if (load < Powerplant.Pmax)

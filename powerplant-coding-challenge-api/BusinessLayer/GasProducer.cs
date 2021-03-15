@@ -55,7 +55,7 @@ namespace BusinessLayer
         {
             double price;
             if (load == 0) return 0;
-            var powerForOneUnit = (Constants.GAS_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency) / Constants.GAS_UNITS_FOR_ONE_ELECTRICITY;
+            var powerForOneUnit = Constants.GAS_UNITS_FOR_ONE_ELECTRICITY / Powerplant.Efficiency;
             var priceForOneUnit = powerForOneUnit * Fuel.GasEuroMWh;
 
             if (load < Powerplant.Pmax)
