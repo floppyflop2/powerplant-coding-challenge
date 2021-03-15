@@ -27,13 +27,18 @@ namespace BusinessLayer
             return orderedPowerplants;
         }
 
-        public List<IEnergyProducer> InitializePowerplantProcesser(List<Powerplant> powerplants, Fuel fuel)
+        public List<IEnergyProducer> InitializePowerplantProcessers(Payload payload)
         {
+            if (payload == null) return null;
+            if (payload.Fuels == null) return null;
+            if (payload.Powerplants == null) return null;
+
             var powerplantsProcessers = new List<IEnergyProducer>();
 
-            foreach (var powerplant in powerplants)
+
+            foreach (var powerplant in payload.Powerplants)
             {
-                var processer = GetProcessing(powerplant, fuel);
+                var processer = GetProcessing(powerplant, payload.Fuels);
                 if (processer != null) powerplantsProcessers.Add(processer);
             }
             return powerplantsProcessers;

@@ -3,6 +3,7 @@ using Domain;
 using Domain.Const;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using TestProject.TestUtils;
 
 namespace TestProject
 {
@@ -22,9 +23,9 @@ namespace TestProject
         public void PowerplantAreCorrectlyOrderedByType()
         {
             //
-            var wind = new Powerplant { Type = PowerplantType.WINDTURBINE, Name = "wind" };
-            var turbo = new Powerplant { Type = PowerplantType.TURBOJET, Name = "turbo" };
-            var gas = new Powerplant { Type = PowerplantType.GASFIRED, Name = "gas" };
+            var wind = DummyObjectFactory.GetDummyWindPowerplant();
+            var turbo = DummyObjectFactory.GetDummyTurboPowerplant();
+            var gas = DummyObjectFactory.GetDummyGasPowerplant();
             var input = new List<Powerplant> { turbo, wind, gas };
             var expected = new List<Powerplant> { wind, gas, turbo };
 
@@ -40,17 +41,13 @@ namespace TestProject
         public void PowerplantProcesserAreTheCorrectType()
         {
             //
-            var wind = new Powerplant { Type = PowerplantType.WINDTURBINE, Name = "wind" };
-            var turbo = new Powerplant { Type = PowerplantType.TURBOJET, Name = "turbo" };
-            var gas = new Powerplant { Type = PowerplantType.GASFIRED, Name = "gas" };
-            var input = new List<Powerplant> { wind, gas, turbo };
-            var fuel = new Fuel();
+            var payload = DummyObjectFactory.GetDummyPayload();
 
             //
-            var result = calculator.InitializePowerplantProcesser(input,fuel);
+            var result = calculator.InitializePowerplantProcessers(payload);
 
             //
-            Assert.AreEqual(input.Count, result.Count);
+            Assert.AreEqual(payload.Powerplants.Length, result.Count);
             Assert.IsInstanceOfType(result[0], typeof(WindProducer));
             Assert.IsInstanceOfType(result[1], typeof(GasProducer));
             Assert.IsInstanceOfType(result[2], typeof(TurboProducer));

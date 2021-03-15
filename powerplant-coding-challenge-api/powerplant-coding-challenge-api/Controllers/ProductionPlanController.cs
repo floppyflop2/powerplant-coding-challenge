@@ -14,11 +14,13 @@ namespace powerplant_coding_challenge_api.Controllers
     public class ProductionPlanController : ControllerBase
     {
 
-        private IPowerplantManager _powerCalculator;
+        private IPowerplantManager _powerplantManager;
+        private IProductionPlanManager _productionPlanManager;
 
-        public ProductionPlanController(IPowerplantManager powerCalculator)
+        public ProductionPlanController(IPowerplantManager powerplantManager, IProductionPlanManager productionPlanManager)
         {
-            _powerCalculator = powerCalculator;
+            _powerplantManager = powerplantManager;
+            _productionPlanManager = productionPlanManager;
         }
 
         // GET: api/<ProductionPlanController>
@@ -37,10 +39,14 @@ namespace powerplant_coding_challenge_api.Controllers
 
         // POST api/<ProductionPlanController>
         [HttpPost]
-        public IActionResult Post([FromBody] object value)
+        public ActionResult<ProductionPlan[]> Post([FromBody] object value)
         {
             if (value == null) return BadRequest();
-            var powerPlant = JsonConvert.DeserializeObject<Payload>(value.ToString());
+            var payload = JsonConvert.DeserializeObject<Payload>(value.ToString());
+
+            var powerplantProducers = _powerplantManager.InitializePowerplantProcessers(payload);
+            var productionPlans = _productionPlanManager.PerformCalculation(powerplantProducers, payload.Load);
+
 
             return Ok();
         }

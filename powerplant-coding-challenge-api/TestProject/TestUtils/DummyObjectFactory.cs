@@ -9,6 +9,18 @@ namespace TestProject.TestUtils
 {
     public class DummyObjectFactory
     {
+        public static Payload GetDummyPayload()
+        {
+            var payload = new Payload();
+            var wind = GetDummyWindPowerplant();
+            var turbo = GetDummyTurboPowerplant();
+            var gas = GetDummyGasPowerplant();
+            var powerPlants = new List<Powerplant> { wind, gas, turbo };
+            payload.Powerplants = powerPlants.ToArray();
+            payload.Fuels = GetDummyFuel();
+            return payload;
+        }
+
         public static Fuel GetDummyFuel()
         {
             return new Fuel

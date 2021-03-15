@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.interfaces;
 using Domain;
+using Domain.Const;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -54,7 +55,7 @@ namespace BusinessLayer
 
         public double CalculateProductionCost(int load)
         {
-            return 0;
+            return Constants.WIND_PRODUCER_COST;
         }
     }
 }

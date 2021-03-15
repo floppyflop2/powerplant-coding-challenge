@@ -41,7 +41,7 @@ namespace powerplant_coding_challenge_api
             app.ConfigureExceptionHandler(logger);
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseAuthorization();
+            //app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
