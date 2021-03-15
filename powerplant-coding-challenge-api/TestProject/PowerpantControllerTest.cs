@@ -32,7 +32,7 @@ namespace TestProject
                 => pmm.InitializePowerplantProcessers(It.IsAny<Payload>())).Returns(new List<IEnergyProducer>());
             productionPlanManagerMock = new Mock<IProductionPlanManager>();
 
-            _client = GetFakeClient(productionPlanManagerMock, powerplantManagerMock);
+            _client = GetClient();
             controllerUrl = "https://localhost:44390/ProductionPlan";
         }
 
@@ -59,7 +59,7 @@ namespace TestProject
             productionPlanManagerMock.
                 Setup(ppmm => ppmm.PerformCalculation(It.IsAny<List<IEnergyProducer>>(), It.IsAny<int>()))
                 .Returns(new List<Domain.ProductionPlan>());
-            var httpContent = DummyObjectFactory.GetSerializedPayload();
+            var httpContent = DummyObjectFactory.GetEmptySerializedPayload();
 
             //
             var response = await _client.PostAsync($"{controllerUrl}", httpContent);
@@ -68,35 +68,50 @@ namespace TestProject
             Assert.AreEqual(System.Net.HttpStatusCode.NoContent, response.StatusCode);
         }
 
-        [TestMethod]
-        public async System.Threading.Tasks.Task ProductionPlanControllerReturnUnsupportedMediaType()
+        [TestMethod] 
+        public async System.Threading.Tasks.Task ProductionPlanControllerReturnInternalError()
         {
             //
-            var httpContent = DummyObjectFactory.GetSerializedPayload();
+            var httpContent = DummyObjectFactory.GetEmptySerializedPayload();
+            HttpRequestMessage httpRequestMessage = new HttpRequestMessage();
+            _client = GetFakeClient(null, null);
+            httpRequestMessage.Content = httpContent;
+            //httpContent = httpRequestMessage;
+
+            //
+            var response = await _client.PostAsync($"{controllerUrl}", httpContent);
+
+            //
+            Assert.AreEqual(System.Net.HttpStatusCode.InternalServerError, response.StatusCode);
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task ProductionPlanControllerReturnsValidPayload()
+        {
+            //
+            HttpContent httpContent = DummyObjectFactory.GetDummySerializedPayload();
             httpContent = null;
 
             //
             var response = await _client.PostAsync($"{controllerUrl}", httpContent);
 
             //
-            Assert.AreEqual(System.Net.HttpStatusCode.UnsupportedMediaType, response.StatusCode);
+            Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
 
         [TestMethod]
-        public async System.Threading.Tasks.Task ProductionPlanControllerReturnInternalError()
+        public async System.Threading.Tasks.Task ProductionPlanControllerReturnsUnsupportedMediaType()
         {
             //
             productionPlanManagerMock.
                 Setup(ppmm => ppmm.PerformCalculation(It.IsAny<List<IEnergyProducer>>(), It.IsAny<int>())).Throws(new System.Exception());
-            var httpContent = DummyObjectFactory.GetSerializedPayload();
-
+            var httpContent = DummyObjectFactory.GetEmptySerializedPayload();
             httpContent = null;
+            
             //
-            var client = GetFakeClient(productionPlanManagerMock, powerplantManagerMock);
             var response = await _client.PostAsync($"{controllerUrl}", httpContent);
 
             //
-            //TODO Should return an internal error
             Assert.AreEqual(System.Net.HttpStatusCode.UnsupportedMediaType, response.StatusCode);
         }
 
@@ -107,6 +122,13 @@ namespace TestProject
                 services.AddSingleton(productionPlanManagerMock.Object);
             });
 
+            TestServer server = new TestServer(builder);
+            return server.CreateClient();
+        }
+
+        private static HttpClient GetClient()
+        {
+            var builder = new WebHostBuilder().UseStartup<Startup>();
             TestServer server = new TestServer(builder);
             return server.CreateClient();
         }

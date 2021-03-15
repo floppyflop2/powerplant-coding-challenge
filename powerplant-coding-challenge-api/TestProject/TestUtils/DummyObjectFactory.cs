@@ -77,12 +77,19 @@ namespace TestProject.TestUtils
             return new WindProducer(wind, fuel);
         }
 
-        public static StringContent GetSerializedPayload() {
+        public static StringContent GetEmptySerializedPayload() {
             
             var content = JsonConvert.SerializeObject(GetDummyPayload());
             StringContent httpContent = new StringContent(content, System.Text.Encoding.UTF8, "application/json");
             return httpContent;
         }
 
+        public static StringContent GetDummySerializedPayload()
+        {
+
+            var content = JsonConvert.SerializeObject(GetDummyPayload());
+            StringContent httpContent = new StringContent(content, System.Text.Encoding.UTF8, "application/json");
+            return httpContent;
+        }
     }
 }

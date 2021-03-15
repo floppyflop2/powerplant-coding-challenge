@@ -28,3 +28,6 @@ C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerpla
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.pdb
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.genruntimeconfig.cache
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
