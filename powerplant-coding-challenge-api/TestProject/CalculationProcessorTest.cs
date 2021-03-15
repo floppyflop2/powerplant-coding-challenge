@@ -33,7 +33,6 @@ namespace TestProject
             var load = 0;
 
             //
-
             var result = calculationProcessor.PerformCalculation(energyProcessors, load);
 
             //

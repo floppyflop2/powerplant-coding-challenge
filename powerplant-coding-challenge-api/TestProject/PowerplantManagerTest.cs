@@ -32,6 +32,31 @@ namespace TestProject
             //
             var result = calculator.SortPowerplantByType(input);
 
+
+            //
+            Assert.AreEqual(expected.Count, result.Count);
+            CollectionAssert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
+        public void PowerplantAreCorrectlyOrderedByFuelCost()
+        {
+            //
+            var wind = DummyObjectFactory.GetDummyWindPowerplant();
+            var turbo = DummyObjectFactory.GetDummyTurboPowerplant();
+            var gas = DummyObjectFactory.GetDummyGasPowerplant();
+            var input = new List<Powerplant> { turbo, wind, gas };
+            var expected = new List<Powerplant> { wind, turbo, gas };
+            var fuelPrice = new Fuel
+            {
+                Wind = 0,
+                KerosineEuroMWh = 1,
+                GasEuroMWh = 2
+            };
+
+            //
+            var result = calculator.SortPowerplantByFuelCost(input, fuelPrice);
+
             //
             Assert.AreEqual(expected.Count, result.Count);
             CollectionAssert.AreEqual(result, expected);
