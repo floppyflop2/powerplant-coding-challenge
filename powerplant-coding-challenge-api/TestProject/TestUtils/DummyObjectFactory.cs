@@ -17,9 +17,12 @@ namespace TestProject.TestUtils
             var wind = GetDummyWindPowerplant();
             var turbo = GetDummyTurboPowerplant();
             var gas = GetDummyGasPowerplant();
+            var load = 480;
             var powerPlants = new List<Powerplant> { wind, gas, turbo };
+
             payload.Powerplants = powerPlants.ToArray();
             payload.Fuels = GetDummyFuel();
+            payload.Load = load;
             return payload;
         }
 
@@ -77,9 +80,15 @@ namespace TestProject.TestUtils
             return new WindProducer(wind, fuel);
         }
 
-        public static StringContent GetEmptySerializedPayload() {
-            
-            var content = JsonConvert.SerializeObject(GetDummyPayload());
+        public static StringContent GetEmptySerializedPayload()
+        {
+
+            var content = JsonConvert.SerializeObject(new Payload
+            {
+                Load = 0,
+                Fuels = new Fuel(),
+                Powerplants = new Powerplant[0]
+            });
             StringContent httpContent = new StringContent(content, System.Text.Encoding.UTF8, "application/json");
             return httpContent;
         }

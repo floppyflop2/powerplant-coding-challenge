@@ -28,8 +28,9 @@ namespace TestProject
         public void Initialize()
         {
             powerplantManagerMock = new Mock<IPowerplantManager>();
-            powerplantManagerMock.Setup(pmm
-                => pmm.InitializePowerplantProcessers(It.IsAny<Payload>())).Returns(new List<IEnergyProducer>());
+            powerplantManagerMock.Setup(pmm => pmm.InitializePowerplantProcessers(It.IsAny<Payload>()))
+                .Returns(new List<IEnergyProducer>());
+
             productionPlanManagerMock = new Mock<IProductionPlanManager>();
 
             _client = GetClient();
@@ -68,15 +69,14 @@ namespace TestProject
             Assert.AreEqual(System.Net.HttpStatusCode.NoContent, response.StatusCode);
         }
 
-        [TestMethod] 
+        [TestMethod]
         public async System.Threading.Tasks.Task ProductionPlanControllerReturnInternalError()
         {
             //
             var httpContent = DummyObjectFactory.GetEmptySerializedPayload();
             HttpRequestMessage httpRequestMessage = new HttpRequestMessage();
-            _client = GetFakeClient(null, null);
+            _client = GetFakeClient(productionPlanManagerMock, powerplantManagerMock);
             httpRequestMessage.Content = httpContent;
-            //httpContent = httpRequestMessage;
 
             //
             var response = await _client.PostAsync($"{controllerUrl}", httpContent);
@@ -90,7 +90,6 @@ namespace TestProject
         {
             //
             HttpContent httpContent = DummyObjectFactory.GetDummySerializedPayload();
-            httpContent = null;
 
             //
             var response = await _client.PostAsync($"{controllerUrl}", httpContent);
@@ -107,7 +106,7 @@ namespace TestProject
                 Setup(ppmm => ppmm.PerformCalculation(It.IsAny<List<IEnergyProducer>>(), It.IsAny<int>())).Throws(new System.Exception());
             var httpContent = DummyObjectFactory.GetEmptySerializedPayload();
             httpContent = null;
-            
+
             //
             var response = await _client.PostAsync($"{controllerUrl}", httpContent);
 
