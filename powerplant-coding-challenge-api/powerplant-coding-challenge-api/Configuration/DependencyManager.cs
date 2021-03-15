@@ -25,6 +25,10 @@ namespace powerplant_coding_challenge_api.Configuration
         {
             services.AddControllers();
             services.AddControllers().AddNewtonsoftJson();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
         }
 
         public static void ConfigureSingleton(this IServiceCollection services)

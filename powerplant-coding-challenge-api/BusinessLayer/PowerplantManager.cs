@@ -50,6 +50,30 @@ namespace BusinessLayer
             return orderedPowerplants;
         }
 
+        public List<Powerplant> SortPowerplantByCo2Emission(List<Powerplant> powerplants, Fuel fuel)
+        {
+            Dictionary<string, List<Powerplant>> fuels = new Dictionary<string, List<Powerplant>>();
+            Dictionary<string, double> fuelByPrice = new Dictionary<string, double>
+            {
+                { PowerplantType.WINDTURBINE, (double)Constants.WIND_PRODUCER_COST },
+                { PowerplantType.GASFIRED,fuel.GasEuroMWh },
+                { PowerplantType.TURBOJET, fuel.KerosineEuroMWh }
+            };
+            fuelByPrice = fuelByPrice.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            foreach (var key in fuelByPrice.Keys)
+            {
+                fuels.Add(key, powerplants.Where(p => p.Type == key).ToList());
+            }
+
+            var orderedPowerplants = new List<Powerplant>();
+            foreach (var p in fuels.Values)
+                orderedPowerplants.AddRange(p);
+
+            return orderedPowerplants;
+        }
+
+
         public List<IEnergyProducer> InitializePowerplantProcessers(Payload payload)
         {
             if (payload == null) return null;

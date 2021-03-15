@@ -9,5 +9,6 @@ namespace BusinessLayer.interfaces
     {
         List<ProductionPlan> PerformCalculation(List<IEnergyProducer> processors, int load);
         List<ProductionPlan> PerformCalculationPricing(List<IEnergyProducer> processors, int load);
+        List<ProductionPlan> PerformCo2CalculationPricing(List<IEnergyProducer> processors, int load);
     }
 }

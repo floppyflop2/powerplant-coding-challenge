@@ -21,6 +21,10 @@ namespace TestProject
         private TestServer server;
         private HttpClient _client;
         private string controllerUrl;
+        private string fuelPriceUrl;
+        private string productionPrice;
+        private string co2emission;
+
         Mock<IPowerplantManager> powerplantManagerMock;
         Mock<IProductionPlanManager> productionPlanManagerMock;
 
@@ -32,9 +36,11 @@ namespace TestProject
                 .Returns(new List<IEnergyProducer>());
 
             productionPlanManagerMock = new Mock<IProductionPlanManager>();
-
             _client = GetClient();
             controllerUrl = "https://localhost:44390/ProductionPlan";
+            fuelPriceUrl = "fuelPrice";
+            productionPrice = "productionPrice";
+            co2emission = "co2emission";
         }
 
         [TestMethod]
@@ -63,7 +69,7 @@ namespace TestProject
             var httpContent = DummyObjectFactory.GetEmptySerializedPayload();
 
             //
-            var response = await _client.PostAsync($"{controllerUrl}", httpContent);
+            var response = await _client.PostAsync($"{controllerUrl}/{fuelPriceUrl}", httpContent);
 
             //
             Assert.AreEqual(System.Net.HttpStatusCode.NoContent, response.StatusCode);
@@ -79,7 +85,7 @@ namespace TestProject
             httpRequestMessage.Content = httpContent;
 
             //
-            var response = await _client.PostAsync($"{controllerUrl}", httpContent);
+            var response = await _client.PostAsync($"{controllerUrl}/{fuelPriceUrl}", httpContent);
 
             //
             Assert.AreEqual(System.Net.HttpStatusCode.InternalServerError, response.StatusCode);
@@ -92,7 +98,7 @@ namespace TestProject
             HttpContent httpContent = DummyObjectFactory.GetDummySerializedPayload();
 
             //
-            var response = await _client.PostAsync($"{controllerUrl}", httpContent);
+            var response = await _client.PostAsync($"{controllerUrl}/{fuelPriceUrl}", httpContent);
 
             //
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
@@ -108,7 +114,7 @@ namespace TestProject
             httpContent = null;
 
             //
-            var response = await _client.PostAsync($"{controllerUrl}", httpContent);
+            var response = await _client.PostAsync($"{controllerUrl}/{fuelPriceUrl}", httpContent);
 
             //
             Assert.AreEqual(System.Net.HttpStatusCode.UnsupportedMediaType, response.StatusCode);

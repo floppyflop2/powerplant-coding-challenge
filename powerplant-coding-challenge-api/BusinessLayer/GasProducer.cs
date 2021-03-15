@@ -21,9 +21,10 @@ namespace BusinessLayer
             _fuel = fuel;
         }
 
-        public ProductionPlan Perform(ref int load, out double price)
+        //2Gas for 1 electricity
+        public ProductionPlan Perform(ref int load, out double price, out double co2)
         {
-            //2Gas for 1 electricity
+            co2 = 0;
             price = CalculateProductionCost(load);
             var productionPlan = ReduceLoad(ref load);
             return productionPlan;
@@ -62,6 +63,23 @@ namespace BusinessLayer
             else price = Powerplant.Pmax * priceForOneUnit;
 
             return Math.Round(price, 2);
+        }
+
+        public double calculateCo2ProductionCost(int load)
+        {
+            if (load == 0) return 0.0;
+            double co2Emission;
+            if (load < _powerplant.Pmax)
+            {
+                co2Emission = Constants.CO2EMISSION * load;
+            }
+            else
+            {
+                co2Emission = Constants.CO2EMISSION * _powerplant.Pmax;
+            }
+            var co2EmissionPrice = co2Emission * Fuel.Co2EuroTon;
+            var totalPrice = co2EmissionPrice + CalculateProductionCost(load);
+            return totalPrice;
         }
     }
 }

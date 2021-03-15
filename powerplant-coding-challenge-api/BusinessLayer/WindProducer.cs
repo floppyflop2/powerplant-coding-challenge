@@ -21,8 +21,9 @@ namespace BusinessLayer
             _fuel = fuel;
         }
 
-        public ProductionPlan Perform(ref int load, out double price)
+        public ProductionPlan Perform(ref int load, out double price, out double co2)
         {
+            co2 = 0;
             price = CalculateProductionCost(load);
             var productionPlan = ReduceLoad(ref load);
             return productionPlan;
@@ -56,6 +57,24 @@ namespace BusinessLayer
         public double CalculateProductionCost(int load)
         {
             return Constants.WIND_PRODUCER_COST;
+        }
+
+        public double calculateCo2ProductionCost(int load)
+        {
+            if (load == 0) return 0.0;
+            var pMaxEfficiency = Powerplant.Pmax * (Fuel.Wind / 100);
+            double co2Emission;
+            if (load < pMaxEfficiency)
+            {
+                co2Emission = Constants.CO2EMISSION * load;
+            }
+            else
+            {
+                co2Emission = Constants.CO2EMISSION * pMaxEfficiency;
+            }
+            var co2EmissionPrice = co2Emission * Fuel.Co2EuroTon;
+            var totalPrice = co2EmissionPrice + CalculateProductionCost(load);
+            return totalPrice;
         }
     }
 }

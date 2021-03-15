@@ -10,5 +10,6 @@ namespace BusinessLayer.interfaces
         List<Powerplant> SortPowerplantByType(List<Powerplant> powerplants);
         List<IEnergyProducer> InitializePowerplantProcessers(Payload payload);
         List<Powerplant> SortPowerplantByFuelCost(List<Powerplant> powerplants, Fuel fuel);
+        List<Powerplant> SortPowerplantByCo2Emission(List<Powerplant> powerplants, Fuel fuel);
     }
 }
