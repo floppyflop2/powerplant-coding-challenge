@@ -103,7 +103,7 @@ namespace TestProject
             fuel.KerosineEuroMWh = 5;
             turboProducer.Powerplant = powerplant;
             turboProducer.Fuel = fuel;
-            var expectedPrice = Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY * fuel.KerosineEuroMWh;
+            var expectedPrice = (Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY / powerplant.Efficiency) * load * fuel.KerosineEuroMWh;
 
             //
             var result = turboProducer.CalculateProductionCost(load);
@@ -145,8 +145,7 @@ namespace TestProject
             turboProducer.Powerplant = powerplant;
             turboProducer.Fuel = fuel;
             
-            var expectedPrice = Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY * fuel.KerosineEuroMWh + 0.3;
-
+            var expectedPrice = (Constants.KEROSINE_UNITS_FOR_ONE_ELECTRICITY / powerplant.Efficiency) * load * fuel.KerosineEuroMWh + 0.3;
             //
             var result = turboProducer.calculateCo2ProductionCost(load);
 
