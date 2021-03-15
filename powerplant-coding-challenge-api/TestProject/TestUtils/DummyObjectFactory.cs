@@ -1,8 +1,10 @@
 ﻿using BusinessLayer;
 using Domain;
 using Domain.Const;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace TestProject.TestUtils
@@ -74,5 +76,13 @@ namespace TestProject.TestUtils
             var fuel = GetDummyFuel();
             return new WindProducer(wind, fuel);
         }
+
+        public static StringContent GetSerializedPayload() {
+            
+            var content = JsonConvert.SerializeObject(GetDummyPayload());
+            StringContent httpContent = new StringContent(content, System.Text.Encoding.UTF8, "application/json");
+            return httpContent;
+        }
+
     }
 }

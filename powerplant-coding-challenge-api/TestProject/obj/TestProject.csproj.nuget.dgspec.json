@@ -272,6 +272,10 @@
               "target": "Package",
               "version": "[16.7.1, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
             "System.Collections": {
               "target": "Package",
               "version": "[4.3.0, )"

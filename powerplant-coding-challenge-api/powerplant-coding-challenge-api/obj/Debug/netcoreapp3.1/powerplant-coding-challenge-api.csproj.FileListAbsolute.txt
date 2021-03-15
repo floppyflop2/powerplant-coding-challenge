@@ -1,3 +1,4 @@
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.config
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\powerplant-coding-challenge-api.exe
@@ -6,6 +7,14 @@ C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerpla
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\powerplant-coding-challenge-api.runtimeconfig.dev.json
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\powerplant-coding-challenge-api.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\powerplant-coding-challenge-api.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\BusinessLayer.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Domain.pdb
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.csprojAssemblyReference.cache
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.AssemblyInfoInputs.cache
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.AssemblyInfo.cs
@@ -15,16 +24,7 @@ C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerpla
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\staticwebassets\powerplant-coding-challenge-api.StaticWebAssets.xml
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\scopedcss\bundle\powerplant-coding-challenge-api.styles.css
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.RazorTargetAssemblyInfo.cache
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.csproj.CopyComplete
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.pdb
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.genruntimeconfig.cache
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Domain.dll
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\Domain.pdb
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\obj\Debug\netcoreapp3.1\powerplant-coding-challenge-api.csproj.CopyComplete
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\BusinessLayer.dll
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.config
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.dll
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll

@@ -1,12 +1,12 @@
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.deps.json
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.pdb
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\Domain.dll
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\Domain.pdb
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csprojAssemblyReference.cache
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.AssemblyInfoInputs.cache
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.AssemblyInfo.cs
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csproj.CopyComplete
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.dll
 C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.pdb
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\Domain.dll
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\bin\Debug\netstandard2.0\Domain.pdb
-C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csproj.CopyComplete
