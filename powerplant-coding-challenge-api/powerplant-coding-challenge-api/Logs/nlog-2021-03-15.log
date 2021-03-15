@@ -34,3 +34,31 @@
 2021-03-15 15:40:57.8752 INFO Application started. Press Ctrl+C to shut down.
 2021-03-15 15:40:57.8752 INFO Hosting environment: Development
 2021-03-15 15:40:57.8752 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api
+2021-03-15 15:46:07.0421 DEBUG Application Starting Up
+2021-03-15 15:46:07.7984 INFO Now listening on: https://localhost:5001
+2021-03-15 15:46:07.8048 INFO Now listening on: http://localhost:5000
+2021-03-15 15:46:07.8048 INFO Application started. Press Ctrl+C to shut down.
+2021-03-15 15:46:07.8048 INFO Hosting environment: Development
+2021-03-15 15:46:07.8048 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api
+2021-03-15 15:46:31.6432 INFO Application is shutting down...
+2021-03-15 15:46:35.8529 DEBUG Application Starting Up
+2021-03-15 15:46:36.1860 INFO Now listening on: https://localhost:5001
+2021-03-15 15:46:36.1860 INFO Now listening on: http://localhost:5000
+2021-03-15 15:46:36.1860 INFO Application started. Press Ctrl+C to shut down.
+2021-03-15 15:46:36.1860 INFO Hosting environment: Development
+2021-03-15 15:46:36.1944 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api
+2021-03-15 15:46:36.5389 INFO Application is shutting down...
+2021-03-15 16:10:22.2799 DEBUG Application Starting Up
+2021-03-15 16:10:23.2747 INFO Application started. Press Ctrl+C to shut down.
+2021-03-15 16:10:23.2747 INFO Hosting environment: Development
+2021-03-15 16:10:23.2747 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api
+2021-03-15 16:10:49.1809 DEBUG Application Starting Up
+2021-03-15 16:10:50.5708 INFO Application started. Press Ctrl+C to shut down.
+2021-03-15 16:10:50.5708 INFO Hosting environment: Development
+2021-03-15 16:10:50.5708 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api
+2021-03-15 16:10:50.5934 WARN Failed to determine the https port for redirect.
+2021-03-15 16:13:35.4617 DEBUG Application Starting Up
+2021-03-15 16:13:36.3948 INFO Application started. Press Ctrl+C to shut down.
+2021-03-15 16:13:36.3979 INFO Hosting environment: Development
+2021-03-15 16:13:36.3979 INFO Content root path: C:\Projects\powerplant-coding-challenge\powerplant-coding-challenge-api\powerplant-coding-challenge-api
+2021-03-15 16:13:36.4169 WARN Failed to determine the https port for redirect.

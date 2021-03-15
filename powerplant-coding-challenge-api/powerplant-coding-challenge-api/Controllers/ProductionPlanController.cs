@@ -23,21 +23,12 @@ namespace powerplant_coding_challenge_api.Controllers
             _productionPlanManager = productionPlanManager;
         }
 
-        // GET: api/<ProductionPlanController>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok("ok");
         }
 
-        // GET api/<ProductionPlanController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ProductionPlanController>
         [HttpPost]
         [Route("fuelPrice")]
         public ActionResult<ProductionPlan[]> ProcessPayloadByFuelPrice([FromBody] object value)
@@ -77,7 +68,6 @@ namespace powerplant_coding_challenge_api.Controllers
                 return StatusCode(500);
             }
         }
-
 
         [HttpPost]
         [Route("co2emission")]
